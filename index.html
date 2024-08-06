@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.my quote.com</title>
+    <link rel="shortcut icon" href="https://static-00.iconduck.com/assets.00/open-book-icon-512x411-u1yfodby.png"
+        type="image/x-icon">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+AR:wght@100..400&family=Playwrite+CU:wght@100..400&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            width: 100%;
+            height: 100vh;
+            /* background-image: url("https://c0.wallpaperflare.com/path/143/622/379/abstract-background-bubble-clear-875d44040436897f36f6ff0a8178cb36.jpg"); */
+            /* background-image: url("https://r4.wallpaperflare.com/wallpaper/892/692/922/howl-s-moving-castle-studio-ghibli-fantasy-art-clouds-daylight-hd-wallpaper-3be62c2d93012fc995842bf94d4cdc00.jpg"); */
+            background-image: url("https://r4.wallpaperflare.com/wallpaper/885/345/283/digital-artwork-anime-girls-anime-dark-hair-hd-wallpaper-49f028fd91fa3dbbd687583fa05176ad.jpg");
+            /* background-color: #465362; */
+            /* background-color: #ed254e; */
+            background-size: cover;
+            /* background-color: #465362; */
+            /* background-color: #ed254e; */
+
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            width: 100%;
+            height: 100vh;
+            padding-top: 2rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            background-color: transparent;
+
+        }
+
+        header {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+            height: 3.2rem;
+            padding-left: 1rem;
+            /* background-color: #ed254e; */
+            background-color: #465362;
+
+            border-bottom: 2px solid #f4fffd;
+        }
+
+        header #logo {
+            width: 3.1rem;
+            height: 3.1rem;
+            /* background-color: green; */
+            background-image: url("https://static-00.iconduck.com/assets.00/open-book-icon-512x411-u1yfodby.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+
+        }
+
+        header #name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 8rem;
+            height: 3rem;
+            /* background-color: green; */
+
+            font-optical-sizing: auto;
+            font-weight: bolder;
+            font-size: 1.5rem;
+            font-style: normal;
+            color: white;
+
+        }
+
+        header #quote-folder {
+            margin-left: 1200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 8rem;
+            height: 3rem;
+            /* background-color: green; */
+            font-optical-sizing: auto;
+            font-weight: bolder;
+            font-size: 1.5rem;
+            font-style: normal;
+            color: #ed254e;
+
+        }
+
+        .main {
+            position: relative;
+            /* box-shadow: 4px 4px 8px #3c4753,-4px -4px 8px #515f71; */
+            /* box-shadow:  4px 4px 12px #c91f42, */
+            /* -4px -4px 12px #ff2b5a; */
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 22%;
+            height: 32%;
+            /* border: 3px solid black; */
+            background-color: transparent;
+            /* background-color: rgba(255, 255, 255, 0.1); */
+            /* background-color: #465362; */
+            /* background-color: #ed254e; */
+            backdrop-filter: blur(50px);
+            border-radius: 12px;
+
+
+
+        }
+
+        #quote {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* color: thistle; */
+            /* color: #f4fffd; */
+            color: #011936;
+            /* color: #ed254e; */
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            text-align: center;
+            width: 100%;
+            height: 75%;
+            /* background-color: #465362; */
+            /* background-color: #ed254e; */
+            border: 1px solid black;
+            text-transform: capitalize;
+            border-radius: 12px;
+        }
+
+        #series {
+            /* color:#011936; */
+            /* color: #f4fffd;  */
+            /* color: #ed254e; */
+            color: #011936;
+            border: 1px solid black;
+
+            border-radius: 12px;
+            padding: 0.5rem;
+            width: 100%;
+            height: 20%;
+            /* background-color:#011936; */
+            text-transform: capitalize;
+            font-size: large;
+            font-weight: bolder;
+        }
+
+        @media (min-width:375px) and (max-width:812px) {
+            .main {
+                width: 20rem;
+                height: 12rem;
+
+            }
+
+            header {
+                gap: 0rem;
+            }
+
+            header #quote-folder {
+                display: none;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div id="logo"></div>
+        <div id="name">&hearts; tiwari &hearts;</div>
+        <div id="quote-folder">Quotes</div>
+    </header>
+    <div class="wrapper">
+
+        <div class="main">
+            <div id="quote"> “ Inshaan ko kabhi puri tarah se samjha nhi ja sakta <br>Kyuki badalte rahna inshaan ki
+                fitrat hai <br>Aur badalte sab hai ”</div>
+            <div id="series">-Asur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ Anant andhkaar hi param satya hai, <br>Lagaaw hi peeda hai karuna hi krurta aur ant hi
+                prarambh ”</div>
+            <div id="series">-Asur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ samanya manushya ka simit gyan <br>usey apne se parey dekhne nhi deti ”</div>
+            <div id="series">-asur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ kuchh ghatnaye afsos ke layak nhi hoti ”</div>
+            <div id="series">-asur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ kab tak logon se ummeed lagaye baithoge <br>ummeed sirf intezaar karati hai <br>sachchai
+                nhi badalti ”</div>
+            <div id="series">-asur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ bhavishya ka gyan to shree krishna ko bhi tha <br>par kya wo yudh ko rok paye the ”</div>
+            <div id="series">-asur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ aaj ki tarikh me achha hona <br>sabse buri baat hai ”</div>
+            <div id="series">-asur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ manushya ka swabhaw hai <br>sangharsh <br>sahyog nhi ”</div>
+            <div id="series">-asur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ andhkar ek sach hai <br>aur <br>prakash ek mithya ”</div>
+            <div id="series">-asur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ peeda se bada shikshak <br>koi nhi hota ”</div>
+            <div id="series">-asur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jis din aapne samne wale ki jarurat samajh li <br>aapne dhandha smjh li ”</div>
+            <div id="series">-telgi</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ system me rah ke <br>khood ka system banayenge ”</div>
+            <div id="series">-telgi</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ ye mahenga sauda aaj ka <br>kal ko jake bahoot sasta lagega aapko ”</div>
+            <div id="series">-telgi</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ darr ki yhi dikkat hai <br>ki kabhi bhi khatam ho skta hai ”</div>
+            <div id="series">-mirzapur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ sach hamesha jaisa dikhta hai <br>waisa hota nhi hai <br>aur wh samay ke sath apna roop
+                badalte rahta hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ dost yaar kah dene se dost yaar nhi ho jata <br>nibhana bhi parta hai ”</div>
+            <div id="series">-panchayat</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ raja chain se so sakta hai ya nhi <br>ye pahredaar ki neeyat pr depend krta hai ”</div>
+            <div id="series">-night-manager</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ dekho tum dost ho isiliye mauka de rhe hai <br>
+                agli baar se aisa prashnottary kiye n to dosti ka lihaaj nhi krenge
+                ”</div>
+            <div id="series">-mirzapur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ hm tumse wo karwayenge jo howrah ke itihaas me aaj tak nhi huaa
+                ”</div>
+            <div id="series">-mirzapur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ bumpilat idea hai <br>
+                solid deemag lagaye ho guru <br>
+                ek dam Chanakya type
+                ”</div>
+            <div id="series">-mirzapur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ amit bhasmasur ki tarah hai <br>
+                paraya ho ya parivaar <br> jis par hath rakha <br> bhashm ho gaya
+                ”</div>
+            <div id="series">-mirzapur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ survival ke liye jo jaruri hai wahi usool hai
+                ”</div>
+            <div id="series">-mirzapur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ wo kya hai na ishika ji <br>
+                purani aadat chhut ti nhi <br> aur <br>fitrat badalti nhi <br>
+                tum aaj bhi usi ki ho
+                ”</div>
+            <div id="series">-mirzapur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ gaaw basne se pahle <br>sabse unchi imarat me baithne ki kkoshish mt kro
+                ”</div>
+            <div id="series">-mirzapur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ paisa sirf ehsaas deta hai asli power bahubal me hai ”</div>
+            <div id="series">-mirzapur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jis kshetra me aap mehman banakr aaye <br>
+                uska maalik bnne ka sapna kb dekh liye
+                ”</div>
+            <div id="series">-mirzapur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ sawdhan rhna chahiye hme <br>ki kispe blv kr rhe hai <br> kabhi kabhi fariste ke roop me
+                shaitaan bhi mil jate hai
+                ”</div>
+            <div id="series">-mirzapur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ aur hamare drishty me ek hi byakti hai <br>
+                mera pratibimb
+                sharad Shukla
+                ”</div>
+            <div id="series">-mirzapur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ humne jhooth isliye bola <br> kyuki sach mohabbat ko mohlat nhi deti ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ hm byapari hai <br>hmse munafe ki baat kro <br>mohabbat ki nhi ”</div>
+            <div id="series">-mirzapur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ bharoshe ka ek niyam hai <br>jab tak karoge nhi <br>tab tak hoga nhi ”</div>
+            <div id="series">-mirzapur</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “mrityu inshaan ko aati hai <br> yaadon ko nhi ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ bharosha karne ke liye aapke kirdaar me imaandari jhalakni chahiye <br>char baate achhi
+                kr lene se bharosha nhi jita jata ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ mard wo hota hai <br> jo aurat par nazar bhi ijjat se uthaye <br>tune to hath utha diya ”
+            </div>
+            <div id="series">-heeramandi</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jaruri nhi ki har khoobsurat dikhne wali cheeje achchhi hi ho <br>kabhi kabhi buri dikhne
+                wali cheeje <br>khubsurat dikhne wali cheejo se behtar hoti hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ marne ke baad ki gaee taarif <br>aur
+                <br>dil dukhane ke baad <br> mangi gaee maafi ka <br> koi mahatva nhi hota ”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ khood ki samajhdari bhi ahamiyat rakhti hai <br>varna <br>arjun aur duryodhan ke guru to
+                ek hi the ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ manushya ki ichchhaye kabhi khatm nhi hoti <br>aur unki ichchhaye hi <br>unke patan ka
+                karan banti hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ aap hi apna mitra hai aur aap hi apna shatru hai<br>kyuki <br>swayan ka patan aur udhdhar
+                <br>dono aap par nirdharit karte hai ”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ satya kabhi daava nhi karta ki mai satya hu <br>lekin jhooth hamesha daava karta hai
+                <br>ki sirf mai hi satya hu ”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ agar mai khamosh hu <br>to mere bolne se pahle <br>aap prasthan kijiye <br>kyuki mere
+                dwara bole jane wale shabdo ka prahar aap sah nhi payenge ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jab maut samne khadi ho <br>to <br>use lalkara nhi krte ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “sampark se jyada sambandh ka mahatva hai <br>jo aapne humse bigar liya hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ mere mn ko kharoch doge <br>to <br>tumhare sharir pr ghav dena mera kartavya hai
+                ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ chahte to barbaad bhi kr skte the khood ko <br>magar humne bhi suna hai <br>log mohabbat
+                me harkar duniya jitte hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ waham hai ki khamosh chehro ka shikaar ashaan hai <br>dhyan rhe <br>yhi khamosh chehre
+                jab chakravyuh rachte hai to kahi ka nhi chhodte ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jab inshaan ko lagta hai ki use koi nhi hara sakta <br>tabhi uska samna usi inshaan se
+                hota hai <br>jo use hara deta hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ mere maun ka maan kijiye mahoday <br>kyuki <br>mere shabd umro ka sankoch nhi krte ”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ galat hokar khood ko sahi saabit karna ashaan hai <br>parantu <br>sahi hokar khood ko
+                sahi saabit karna <br>atyant mushkil ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ mai nhi manta ki samay ke sath ghaav bhar jata hai <br>samne doshi aa jaye to jakhm phir
+                se hre ho jate hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jo shauk EMI pr pura kiya jaye <br>wo ghatiya shauk hm nhi rakhte ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “yudh ka vaatavaran tum banao to sahi <br>ran kshetra me kudne ki bechaini hme bhi hai ”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ bharoshe ka bhav hota hai <br>kamate kamate zindagi nikal jati hai <br>jata ek jhatke me
+                hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ dekhiye mahoday <br>gyan dene ki vajaay is baat ka dhyan dijiye ki <br>mai krta whi hu jo
+                mera mn karta hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ aapke galat vyahaar pr bhi <br>agar koi vyakti <br>khamosh raha ho <br>to smjh lo aap
+                uske banaye chakravyuh me fasne wale ho ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ samay jab viprit ho <br>to shant rahna hi sahi hota hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jis sach ko sahi waqt par n bataya jaye <br>wh jhooth ban jata hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ prem me para purush chhal ko <br>(vidhi ka vidhaan) <br>ka name de deta hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jo purush ek stree ke liye apne lakshya ka kyag karta hai <br>ant me wh dono ko kho deta
+                hai <br>us stree ko bhi aur apne lakshya ko bhi ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ kaliyug ka ek hi niyam hai <br>jitna atoot vishwas hoga <br>utna khaufnaak dhoka hoga ”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ deh vaasnaao se utpan prem <br>aksar vaasnaao ki purti par samapt ho jata hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ pratham anokhe ehsaas se lekar <br>ghor viyog tak ki yatra prem hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ hme dukh sadaiv whi se prapt hote hai <br>jaha se hme sarvadhik sukh ki abhilasha hoti
+                hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ duniya ki sabse sasti cheej hai dhoka <br>jise dene ke baad inshaan ki keemat <br>do
+                kauri ki rah jati hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ maine kaha tha n aapse <br>jab aap apna ravaiya badlenge <br>hm poora khel badal denge ”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ hamari kisi bhi baat ko majaak me mat lena <br>kyuki hamari parvarish us khandaan me huee
+                hai <br>jaha jaan se jyada jubaan ki keemat hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jab nazre jhukane wala najre milane lage <br>to smjh jana chakravyuh racha ja chuka hai
+                <br>prahar kabhi bhi ho skta hai ”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ keetabon pr dhool lag jane se <br> kahaniya khatam nhi hoti ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jo vyakti ekant me khoos rahta hai <br>ya to wh ek jaanvar hai <br>ya phir bhagwan ”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ darr achha hota hai <br>deemang aur paon <br>dono sahi jagah rakhta hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ shringar karti mahilaao se <br>sangharsh karti mahilaye adhik sundar lagti hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ gm ko agar taqat na banaya jaye <br>to wo bimari bn jati hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ hothon pr shikayat ka kaafila hai <br>aur aankhon me gale lagane ki talab ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ akelapan behtar hai <br>madharch*d logon se ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ and the truth is <br>ummeed kisi se mt rakhna ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ kuchh sawalon ka jawaab waqt deta hai <br>aur jo jawaab waqt deta hai <br>wo behtar nhi
+                behtarin hota hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ i accepted <br>hm kisi ko jabardasti <br>apna nhi bana skte ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ lord krishna said :- <br>jeevan me kabhi mauka mile to <br>kisi ke liye sarthi banna
+                <br>swarthi nhi ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ gm rhega mil na ske puri tarah se <br>pr sukoon rhega hamesha <br>ek do mulaqaate huee
+                thi ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ kisi ki achchhai ka <br>itna bhi fayda mt uthao ki <br>use khood apni achchhai se
+                <br>nafrat ho jaye ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ sabr ke kuchh ghoont itne karwe hote hai <br>ki zindagi ki mithaas chhin lete hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jahan narajgi ki keemat na ho <br>wahan naraaz hona chhod dena chahiye ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “chupp rahna bhi ek shikayat hai”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ gaali to hm dete nhi hai <br>agar di hai to <br>you deserve it ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ mitrata ho ya prem <br>tisra aata hai to farq parta hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ mai ekant chunta nhi <br>swikarta hu ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ apne kirdaar se mahakta hai inshaan <br>charitra ko pavitra krne ka koi itra nhi aata ”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ dukh ka pratik shayad rona nhi <br>maun ho jana hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “samay se sab kuchh milta hai <br>samay se purv ki chahat hi <br>dukh ka karan banti hai”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ maun sbse achha uttar hai <br>kisi aise vyakti ke liye <br>jo aapke shabdo ko mahatva nhi
+                deta ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ajaadi kaise mili <br>ye padhane se jyada jaruri ye padhana hai <br>ki hm gulaam kaise
+                bne”</div>
+            <div id="series">-osho</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ us aagya ka palan kabhi mat karna <br>jo tumhare bhitar se na aati ho ”</div>
+            <div id="series">-osho</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ tyag whi kre jahan uski kadra ho <br>dopahar me diye jalane se <br>andhkaar nhi <br>diye
+                ka vajood khatm hota hai ”</div>
+            <div id="series">-osho</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ socho to aap bilkul akele ho <br>thik se socho to yhi satya hai ”</div>
+            <div id="series">-osho</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ shikayat hogi to khood se hogi <br>aapse to hamesha ishq hi hoga ”</div>
+            <div id="series">-osho</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jhootha inshaan ant me apne siwaay <br>kisi ko dhokha nhi de skta ”</div>
+            <div id="series">-osho</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ sundarta vivaah ka pratik ho skta hai <br>prem ka nahin ”</div>
+            <div id="series">-osho</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jyada samajhdaar aur pagal me <br>ek samanta hoti hai <br>ye dono kisi ki nhi sunte ”
+            </div>
+            <div id="series">-osho</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ har sukh ki akanksha me <br>naye dukh ka janm hai ”</div>
+            <div id="series">-osho</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ bhagwan ke bare me janna hai to us ladki se puchho <br>jisne balatkar hone se pahle
+                chinkh chinkh kr bhagwan ko pukara tha ”</div>
+            <div id="series">-osho</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ phir se shuru karenge ek naya adhyay <br>ye barbaadiyo ka daur zara guzar jane do ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “jise tum english me <br> (live in relationship) <br> kahte ho na <br>usi ko hindi me
+                rakhel kaha jata hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “risk is the down payment of your success ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ before you invest in something <br>invest in time to understand it ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “jab aapke adhyay me koi naya mor aane wala hoga <br>to usse pahle niyati aapko aisi
+                paristhiti me dalegi <br>jaha aapko maut zindagi se jyada pyari lagne lagegi ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “sach whi hai jise saavit kiya ja skte”</div>
+            <div id="series">-badla</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ agar musqurahat ke liye ishwar ko dhanyavaad nhi diya <br>to aankhon me aaye aanshuo ke
+                liye <br>shikayat ka koi haq nhi ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jab log aapke vartmaan se bhaybhit hote hai <br>to we aapke atit ko samne late hai ”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ek sakhs ek hi sabak aapko do baar sikhaye <br>to galti uski nhi aapki hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “being in relationship for 4 years and then breakup <br>congrats, you now have a degree in
+                <br>"relationship management" ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “shuruwaat me khamoshi padhne wale <br>ant me <br>chikhen bhi ansuni kr dete hai”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “achhe hote hai wo log jo har jagah muh marte hai <br>kisi ek par mrne wala mr jaya krte
+                hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ bhawnaao ko mrit ghoshit kr ke <br>bhawukta se dur ho gaya hu ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “daharne wala agar shant ho jaye <br>to uski khamoshi shukoon nhi <br> khauf paida karti
+                hai”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ pratiksha agar sima se adhik ho jaye to <br>milne ka moh dheere-dheere samapt ho jata hai
+                ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “risk is always better than regret”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ khood ka minus point jan lena <br>zindagi ka sabse bara + plus point hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ samay ke pass itna samay nhi hai <br>ki wo aapko dubara samay de ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ when the chemistry teacher said <br>"old bonds break when new are formed" ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ prem ka chakravyuh bhedna sambhav nhi mitra <br>iske andar para sakhs <br>ant me mara
+                jata hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ badi manzil ke musafir <br>dil chhota nhi rakhte ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ shabd to yada-kada chubhte hi rahte hai <br>pr kisi ka maun chubh jaye to sambhal jana ”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ ishq ki sabse kamjor pahlu ye hai ki <br>ye kisi bhi ghatiya inshaan se ho skta hai ”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ varchaswa koi paramparagat vastu nahi <br>yh apne dam pr khood se kamaya jata hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ feelings are just visitors. let them <br>come and go ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ tumhare lakshya ke alaawa jis par bhi tumhara dhyan ja raha hai <br>whi tumhara param
+                satru hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “bs itni si samajhdaari kaafi hai ki <br>saawlapan doglapan se behtar hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ jo pasand ho use prapt kro ya phir <br>jo prapt hai use pasand kro ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ sab kuchh paristhitiyo pr nirbhar hai <br>jo sher jungle me raaz karta hai <br>whi sher
+                circus me nachta bhi hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ sukoon jaisi koi chij nhi hoti <br>ye sirf ek bhram hai ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ inside every person <br>you know <br>there is a person <br>you don't know ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ before you embark on a journey of revenge <br>dig two graves ”</div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ kali linux is not just an operating system... <br>it is real gem of computer science ”
+            </div>
+            <div id="series">-unknown</div>
+        </div>
+        <div class="main">
+            <div id="quote"> “ privacy is a big myth <br>bcz <br> nothing is safe in the world of hacking ”</div>
+            <div id="series">-unknown</div>
+        </div>
+    </div>
+</body>
+
+</html>
