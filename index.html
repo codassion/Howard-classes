@@ -38,6 +38,8 @@
         }
 
         .wrapper {
+            
+            margin-top: 2rem;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
@@ -52,6 +54,10 @@
         }
 
         header {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            margin-bottom: 2rem;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -61,9 +67,11 @@
             padding-left: 1rem;
             /* background-color: #ed254e; */
             /* background-color: #465362; */
-            background-color: rgba(223, 55, 55, 0.17);
-
-            border-bottom: 2px solid #f4fffd;
+            /* background-color: rgba(223, 55, 55, 0.17); */
+            background-color: black;
+            /* box-shadow: 3px 3px 5px black, -3px -3px 5px black; */
+            
+            border-bottom: 3px double white;
             color: white;
             text-transform: capitalize;
             font-size: 1.5rem;
