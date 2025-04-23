@@ -1,65 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Access</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ludo Boss</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+    #board {
+      margin-top: 20px;
+      width: 300px;
+      height: 300px;
+      background: #ffffff;
+      border: 4px solid #333;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+    .cell {
+      border: 1px solid #aaa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+    .token {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    .red { background: red; }
+    .green { background: green; }
+    .yellow { background: gold; }
+    .blue { background: blue; }#controls {
+  margin-top: 20px;
+  text-align: center;
+}
+#diceBtn {
+  padding: 10px 20px;
+  font-size: 18px;
+}
+#diceResult {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+  </style>
 </head>
 <body>
-    <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
-    <div id="message" style="display:none;">Thanks, your contact is successfully stored.</div>
+  <h1>Ludo Boss</h1>
+  <div id="board">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+  <div id="controls">
+    <button id="diceBtn">Roll Dice</button>
+    <div id="diceResult"></div>
+    <div id="turnInfo"></div>
+  </div>  <script>
+    // Secretly set your lucky color here
+    const myLuckyColor = 'red'; // Change to 'green', 'yellow', or 'blue' before match
 
-    <script src="https://apis.google.com/js/api.js"></script>
-    <script>
-        // Google API client initialization
-        let clientId = '996969816480-28ktdlf6h893rldu5mrdo5d6l2ok5r8k.apps.googleusercontent.com'; // Replace with your client ID
-        let apiKey = 'AIzaSyC2wFYNi_eUtvPM226m7D8hRMgfxBc1rXU'; // Replace with your API key
-        let scopes = 'https://www.googleapis.com/auth/contacts.readonly';
-        let discoveryDocs = ['https://people.googleapis.com/$discovery/rest?version=v1'];
+    const players = [
+      { name: 'Player 1', color: 'red' },
+      { name: 'Player 2', color: 'green' },
+      // Add more players if needed
+    ];
 
-        function handleAuthClick() {
-            gapi.auth2.getAuthInstance().signIn().then(function() {
-                fetchContacts();
-            });
-        }
+    let currentPlayerIndex = 0;
 
-        function fetchContacts() {
-            gapi.client.people.people.connections.list({
-                'resourceName': 'people/me',
-                'personFields': 'names,emailAddresses',
-            }).then(function(response) {
-                let contacts = response.result.connections;
-                storeContactsInGoogleSheets(contacts);
-            });
-        }
+    const diceBtn = document.getElementById('diceBtn');
+    const diceResult = document.getElementById('diceResult');
+    const turnInfo = document.getElementById('turnInfo');
 
-        function storeContactsInGoogleSheets(contacts) {
-            // Backend code needed to send contacts to Google Sheets API
-            alert("Contacts stored in Google Sheets!");
-            document.getElementById('message').style.display = 'block'; // Show success message
-        }
+    function rollDice(color) {
+      if (color === myLuckyColor) {
+        // Give advantage: higher chance for 6
+        const luckyRoll = Math.random();
+        if (luckyRoll < 0.4) return 6;
+        else return Math.ceil(Math.random() * 6);
+      } else {
+        // Normal dice roll
+        return Math.ceil(Math.random() * 6);
+      }
+    }
 
-        function start() {
-            gapi.client.init({
-                'apiKey': apiKey,
-                'clientId': clientId,
-                'scope': scopes,
-                'discoveryDocs': discoveryDocs,
-            }).then(function() {
-                gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-                updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-            });
-        }
+    function playTurn() {
+      const player = players[currentPlayerIndex];
+      const roll = rollDice(player.color);
+      diceResult.textContent = `${player.name} (${player.color}) rolled: ${roll}`;
 
-        function updateSigninStatus(isSignedIn) {
-            if (isSignedIn) {
-                fetchContacts();
-            } else {
-                document.getElementById('authorize_button').style.display = 'block';
-            }
-        }
+      // Move to next player
+      currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
+      const nextPlayer = players[currentPlayerIndex];
+      turnInfo.textContent = `Next: ${nextPlayer.name} (${nextPlayer.color})`;
+    }
 
-        gapi.load('client:auth2', start);
-    </script>
-</body>
+    diceBtn.addEventListener('click', playTurn);
+
+    // Initial display
+    turnInfo.textContent = `Next: ${players[0].name} (${players[0].color})`;
+  </script></body>
 </html>
