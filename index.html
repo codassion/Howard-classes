@@ -1,122 +1,115 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ludo Boss</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial;
+      text-align: center;
       background: #f0f0f0;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
     h1 {
       margin-top: 20px;
-      font-size: 24px;
     }
     #board {
-      margin-top: 20px;
-      width: 300px;
-      height: 300px;
-      background: #ffffff;
-      border: 4px solid #333;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(15, 20px);
+      grid-template-rows: repeat(15, 20px);
+      margin: 20px auto;
+      border: 2px solid #000;
     }
     .cell {
-      border: 1px solid #aaa;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
+      width: 20px;
+      height: 20px;
+      border: 0.5px solid #ccc;
     }
     .token {
-      width: 30px;
-      height: 30px;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
     }
     .red { background: red; }
     .green { background: green; }
-    .yellow { background: gold; }
-    .blue { background: blue; }#controls {
-  margin-top: 20px;
-  text-align: center;
-}
-#diceBtn {
-  padding: 10px 20px;
-  font-size: 18px;
-}
-#diceResult {
-  margin-top: 10px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
+    .yellow { background: yellow; }
+    .blue { background: blue; }
+    #controls {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #log {
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
-  <h1>Ludo Boss</h1>
-  <div id="board">
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-  </div>
-  <div id="controls">
-    <button id="diceBtn">Roll Dice</button>
-    <div id="diceResult"></div>
-    <div id="turnInfo"></div>
-  </div>  <script>
-    // Secretly set your lucky color here
-    const myLuckyColor = 'red'; // Change to 'green', 'yellow', or 'blue' before match
 
-    const players = [
-      { name: 'Player 1', color: 'red' },
-      { name: 'Player 2', color: 'green' },
-      // Add more players if needed
-    ];
+<h1>Ludo Boss</h1>
+<div id="board"></div>
 
-    let currentPlayerIndex = 0;
+<div id="controls">
+  <button onclick="rollDice()">Roll Dice</button>
+  <div id="log"></div>
+</div>
 
-    const diceBtn = document.getElementById('diceBtn');
-    const diceResult = document.getElementById('diceResult');
-    const turnInfo = document.getElementById('turnInfo');
+<script>
+  const board = document.getElementById("board");
+  const log = document.getElementById("log");
 
-    function rollDice(color) {
-      if (color === myLuckyColor) {
-        // Give advantage: higher chance for 6
-        const luckyRoll = Math.random();
-        if (luckyRoll < 0.4) return 6;
-        else return Math.ceil(Math.random() * 6);
-      } else {
-        // Normal dice roll
-        return Math.ceil(Math.random() * 6);
-      }
+  const players = [
+    { name: "Player 1", color: "red", pos: 0 },
+    { name: "Player 2", color: "green", pos: 0 },
+    { name: "Player 3", color: "yellow", pos: 0 },
+    { name: "Player 4", color: "blue", pos: 0 }
+  ];
+
+  const myLuckyColor = "red"; // <<< Change this to secretly control winner
+
+  let currentPlayer = 0;
+  const cells = [];
+
+  // Setup board (225 cells: 15x15)
+  for (let i = 0; i < 225; i++) {
+    const cell = document.createElement("div");
+    cell.classList.add("cell");
+    board.appendChild(cell);
+    cells.push(cell);
+  }
+
+  function rollDice() {
+    const player = players[currentPlayer];
+
+    // Lucky player advantage
+    let roll = Math.floor(Math.random() * 6) + 1;
+    if (player.color === myLuckyColor && Math.random() < 0.5) {
+      roll = 6;
     }
 
-    function playTurn() {
-      const player = players[currentPlayerIndex];
-      const roll = rollDice(player.color);
-      diceResult.textContent = `${player.name} (${player.color}) rolled: ${roll}`;
+    player.pos += roll;
+    if (player.pos > 224) player.pos = 224;
 
-      // Move to next player
-      currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
-      const nextPlayer = players[currentPlayerIndex];
-      turnInfo.textContent = `Next: ${nextPlayer.name} (${nextPlayer.color})`;
-    }
+    renderTokens();
 
-    diceBtn.addEventListener('click', playTurn);
+    log.innerHTML = `${player.name} (${player.color}) rolled: ${roll}<br>Next: ${players[(currentPlayer + 1) % 4].name}`;
 
-    // Initial display
-    turnInfo.textContent = `Next: ${players[0].name} (${players[0].color})`;
-  </script></body>
+    currentPlayer = (currentPlayer + 1) % 4;
+  }
+
+  function renderTokens() {
+    cells.forEach(cell => cell.innerHTML = "");
+    players.forEach(player => {
+      const token = document.createElement("div");
+      token.className = `token ${player.color}`;
+      cells[player.pos].appendChild(token);
+    });
+  }
+
+  renderTokens();
+</script>
+
+</body>
 </html>
