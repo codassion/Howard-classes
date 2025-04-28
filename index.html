@@ -1,115 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ludo Boss</title>
+  <meta charset="UTF-8">
+  <title>NoFap Day Tracker</title>
   <style>
     body {
-      font-family: Arial;
-      text-align: center;
-      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 20px;
     }
     h1 {
-      margin-top: 20px;
+      text-align: center;
+      color: #333;
     }
-    #board {
-      display: grid;
-      grid-template-columns: repeat(15, 20px);
-      grid-template-rows: repeat(15, 20px);
-      margin: 20px auto;
-      border: 2px solid #000;
+    table {
+      width: 60%;
+      margin: auto;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .cell {
-      width: 20px;
-      height: 20px;
-      border: 0.5px solid #ccc;
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
     }
-    .token {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
+    th {
+      background: #333;
+      color: white;
     }
-    .red { background: red; }
-    .green { background: green; }
-    .yellow { background: yellow; }
-    .blue { background: blue; }
-    #controls {
-      margin-top: 20px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-    }
-    #log {
-      margin-top: 10px;
+    .edit {
+      width: 100px;
+      padding: 5px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-<h1>Ludo Boss</h1>
-<div id="board"></div>
+<h1>My NoFap Day Tracker</h1>
 
-<div id="controls">
-  <button onclick="rollDice()">Roll Dice</button>
-  <div id="log"></div>
-</div>
-
-<script>
-  const board = document.getElementById("board");
-  const log = document.getElementById("log");
-
-  const players = [
-    { name: "Player 1", color: "red", pos: 0 },
-    { name: "Player 2", color: "green", pos: 0 },
-    { name: "Player 3", color: "yellow", pos: 0 },
-    { name: "Player 4", color: "blue", pos: 0 }
-  ];
-
-  const myLuckyColor = "red"; // <<< Change this to secretly control winner
-
-  let currentPlayer = 0;
-  const cells = [];
-
-  // Setup board (225 cells: 15x15)
-  for (let i = 0; i < 225; i++) {
-    const cell = document.createElement("div");
-    cell.classList.add("cell");
-    board.appendChild(cell);
-    cells.push(cell);
-  }
-
-  function rollDice() {
-    const player = players[currentPlayer];
-
-    // Lucky player advantage
-    let roll = Math.floor(Math.random() * 6) + 1;
-    if (player.color === myLuckyColor && Math.random() < 0.5) {
-      roll = 6;
-    }
-
-    player.pos += roll;
-    if (player.pos > 224) player.pos = 224;
-
-    renderTokens();
-
-    log.innerHTML = `${player.name} (${player.color}) rolled: ${roll}<br>Next: ${players[(currentPlayer + 1) % 4].name}`;
-
-    currentPlayer = (currentPlayer + 1) % 4;
-  }
-
-  function renderTokens() {
-    cells.forEach(cell => cell.innerHTML = "");
-    players.forEach(player => {
-      const token = document.createElement("div");
-      token.className = `token ${player.color}`;
-      cells[player.pos].appendChild(token);
-    });
-  }
-
-  renderTokens();
-</script>
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Date</th>
+      <th>Status (Pass/Break)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Day 1</td><td>17 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
+    <tr><td>Day 2</td><td>18 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
+    <tr><td>Day 3</td><td>19 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
+    <tr><td>Day 4</td><td>20 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
+    <tr><td>Day 5</td><td>21 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
+    <tr><td>Day 6</td><td>22 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
+    <tr><td>Day 7</td><td>23 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
+    <tr><td>Day 8</td><td>24 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
+    <tr><td>Day 9</td><td>25 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
+    <tr><td>Day 10</td><td>26 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
+    <tr><td>Day 11</td><td>27 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
+    <tr><td>Day 12</td><td>28 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
+    <!-- Aur din bhi add kar sakte hain jaise jaise badhna ho -->
+  </tbody>
+</table>
 
 </body>
 </html>
