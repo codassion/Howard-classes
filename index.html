@@ -1,69 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>NoFap Day Tracker</title>
+  <title>My Tour Plan Map</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script 
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  </script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-    table {
-      width: 60%;
-      margin: auto;
-      border-collapse: collapse;
-      background: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    th, td {
-      padding: 12px;
-      border: 1px solid #ddd;
-      text-align: center;
-    }
-    th {
-      background: #333;
-      color: white;
-    }
-    .edit {
-      width: 100px;
-      padding: 5px;
-      font-size: 14px;
+    #map {
+      height: 100vh;
+      width: 100%;
     }
   </style>
 </head>
 <body>
 
-<h1>My NoFap Day Tracker</h1>
+<div id="map"></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Day</th>
-      <th>Date</th>
-      <th>Status (Pass/Break)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Day 1</td><td>17 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
-    <tr><td>Day 2</td><td>18 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
-    <tr><td>Day 3</td><td>19 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
-    <tr><td>Day 4</td><td>20 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
-    <tr><td>Day 5</td><td>21 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
-    <tr><td>Day 6</td><td>22 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
-    <tr><td>Day 7</td><td>23 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
-    <tr><td>Day 8</td><td>24 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
-    <tr><td>Day 9</td><td>25 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
-    <tr><td>Day 10</td><td>26 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
-    <tr><td>Day 11</td><td>27 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
-    <tr><td>Day 12</td><td>28 April 2025</td><td><input class="edit" type="text" placeholder="PASS or BREAK"></td></tr>
-    <!-- Aur din bhi add kar sakte hain jaise jaise badhna ho -->
-  </tbody>
-</table>
+<script>
+    // Map initialize
+    var map = L.map('map').setView([30.0, 78.0], 5);
+  
+    // OpenStreetMap tile
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18
+    }).addTo(map);
+  
+    // Tour locations
+    var locations = [
+        { name: "havlock island",    coords: [12.037801597967405, 92.98734700860436] },
+        { name: "Darjeeling",    coords: [27.0360, 88.2627] },
+        { name: "Kalimpong",     coords: [27.0667, 88.4667] },
+        { name: "Pelling",       coords: [27.3100, 88.2200] },
+        { name: "Tawang",        coords: [27.5867, 91.8650] },
+        { name: "Ziro Valley",   coords: [27.5500, 93.8333] },
+        { name: "Auli",          coords: [30.5164, 79.5688] },
+        { name: "Munsiyari",     coords: [30.0668, 80.2435] },
+        { name: "Spiti Valley",  coords: [32.2461, 78.0170] },
+        { name: "Ladakh (Leh)",  coords: [34.1526, 77.5771] }
+];
+
+  
+    // Add markers
+    var latlngs = [];
+    locations.forEach(function(loc) {
+      L.marker(loc.coords).addTo(map).bindPopup(loc.name);
+      latlngs.push(loc.coords);
+    });
+  
+    // Draw line connecting all locations
+    var polyline = L.polyline(latlngs, { color: 'red' }).addTo(map);
+  
+    // Fit map to polyline
+    map.fitBounds(polyline.getBounds());
+  </script>
+  
 
 </body>
 </html>
