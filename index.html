@@ -15,6 +15,19 @@
       height: 100vh;
       width: 100%;
     }
+
+    .custom-icon {
+      background-color: #f03;
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      font-weight: bold;
+      border: 2px solid white;
+      box-shadow: 0 0 2px #333;
+    }
   </style>
 </head>
 <body>
@@ -22,43 +35,49 @@
 <div id="map"></div>
 
 <script>
-    // Map initialize
-    var map = L.map('map').setView([30.0, 78.0], 5);
-  
-    // OpenStreetMap tile
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 18
-    }).addTo(map);
-  
-    // Tour locations
-    var locations = [
-        { name: "havlock island",    coords: [12.037801597967405, 92.98734700860436] },
-        { name: "Darjeeling",    coords: [27.0360, 88.2627] },
-        { name: "Kalimpong",     coords: [27.0667, 88.4667] },
-        { name: "Pelling",       coords: [27.3100, 88.2200] },
-        { name: "Tawang",        coords: [27.5867, 91.8650] },
-        { name: "Ziro Valley",   coords: [27.5500, 93.8333] },
-        { name: "Auli",          coords: [30.5164, 79.5688] },
-        { name: "Munsiyari",     coords: [30.0668, 80.2435] },
-        { name: "Spiti Valley",  coords: [32.2461, 78.0170] },
-        { name: "Ladakh (Leh)",  coords: [34.1526, 77.5771] }
-];
+  // Initialize map
+  var map = L.map('map').setView([30.0, 78.0], 5);
 
-  
-    // Add markers
-    var latlngs = [];
-    locations.forEach(function(loc) {
-      L.marker(loc.coords).addTo(map).bindPopup(loc.name);
-      latlngs.push(loc.coords);
+  // OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18
+  }).addTo(map);
+
+  // Locations with names and coordinates
+  var locations = [
+    { name: "havlock island", coords: [12.037801597967405, 92.98734700860436] },
+    { name: "Darjeeling",     coords: [27.0360, 88.2627] },
+    { name: "Kalimpong",      coords: [27.0667, 88.4667] },
+    { name: "Pelling",        coords: [27.3100, 88.2200] },
+    { name: "Tawang",         coords: [27.5867, 91.8650] },
+    { name: "Ziro Valley",    coords: [27.5500, 93.8333] },
+    { name: "Auli",           coords: [30.5164, 79.5688] },
+    { name: "Munsiyari",      coords: [30.0668, 80.2435] },
+    { name: "Spiti Valley",   coords: [32.2461, 78.0170] },
+    { name: "Ladakh (Leh)",   coords: [34.1526, 77.5771] }
+  ];
+
+  var latlngs = [];
+
+  locations.forEach(function(loc, index) {
+    // Create a custom divIcon with number
+    var numberIcon = L.divIcon({
+      className: 'custom-icon',
+      html: (index + 1).toString(),
+      iconSize: [24, 24]
     });
-  
-    // Draw line connecting all locations
-    var polyline = L.polyline(latlngs, { color: 'red' }).addTo(map);
-  
-    // Fit map to polyline
-    map.fitBounds(polyline.getBounds());
-  </script>
-  
+
+    // Add marker with custom icon and popup
+    L.marker(loc.coords, { icon: numberIcon }).addTo(map).bindPopup((index + 1) + ". " + loc.name);
+    latlngs.push(loc.coords);
+  });
+
+  // Draw polyline to connect the locations
+  var polyline = L.polyline(latlngs, { color: 'red' }).addTo(map);
+
+  // Fit map to show all points
+  map.fitBounds(polyline.getBounds());
+</script>
 
 </body>
 </html>
