@@ -1,172 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dream11 Team Generator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .team {
-            margin-bottom: 20px;
-        }
-        .team ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .team ul li {
-            margin: 5px 0;
-        }
-        .team h3 {
-            color: #333;
-        }
-       
-    </style>
+  <meta charset="UTF-8">
+  <title>My Vocabulary Sheet</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background-color: #f1f1f1;
+    }
+    h2 {
+      text-align: center;
+    }
+    #search {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      border: 2px solid #888;
+      border-radius: 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    tr.hide {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Dream11 Team Generator</h1>
-    
-    <div>
-        <h3>Enter Player Details</h3>
-        <form id="playerForm">
-            <h4>Wicketkeepers (WK)</h4>
-            <div>
-                <label>Player 1: </label><input type="text" name="wkPlayer1" placeholder="Name"><input type="number" name="wkCredit1" placeholder="Credit"><br>
-                <label>Player 2: </label><input type="text" name="wkPlayer2" placeholder="Name"><input type="number" name="wkCredit2" placeholder="Credit">
-            </div>
+  <h2>📘 My Vocabulary List</h2>
 
-            <h4>Batsmen (BAT)</h4>
-            <div>
-                <label>Player 1: </label><input type="text" name="batPlayer1" placeholder="Name"><input type="number" name="batCredit1" placeholder="Credit"><br>
-                <label>Player 2: </label><input type="text" name="batPlayer2" placeholder="Name"><input type="number" name="batCredit2" placeholder="Credit"><br>
-                <label>Player 3: </label><input type="text" name="batPlayer3" placeholder="Name"><input type="number" name="batCredit3" placeholder="Credit"><br>
-                <label>Player 4: </label><input type="text" name="batPlayer4" placeholder="Name"><input type="number" name="batCredit4" placeholder="Credit">
-            </div>
+  <input type="text" id="search" placeholder="🔍 Search a word..." onkeyup="searchWords()">
 
-            <h4>All-rounders (AR)</h4>
-            <div>
-                <label>Player 1: </label><input type="text" name="arPlayer1" placeholder="Name"><input type="number" name="arCredit1" placeholder="Credit"><br>
-                <label>Player 2: </label><input type="text" name="arPlayer2" placeholder="Name"><input type="number" name="arCredit2" placeholder="Credit">
-            </div>
+  <table id="vocabTable">
+    <tr>
+      <th>Verb 1</th>
+      <th>Hindi Meaning</th>
+      <th>Verb 2</th>
+      <th>Verb 3</th>
+    </tr>
 
-            <h4>Bowlers (BOWL)</h4>
-            <div>
-                <label>Player 1: </label><input type="text" name="bowlPlayer1" placeholder="Name"><input type="number" name="bowlCredit1" placeholder="Credit"><br>
-                <label>Player 2: </label><input type="text" name="bowlPlayer2" placeholder="Name"><input type="number" name="bowlCredit2" placeholder="Credit"><br>
-                <label>Player 3: </label><input type="text" name="bowlPlayer3" placeholder="Name"><input type="number" name="bowlCredit3" placeholder="Credit">
-            </div>
-            
-            <button type="button" onclick="generateTeams()">Generate Teams</button>
-        </form>
-    </div>
+    <!-- Add your own words here -->
+    <tr><td>apple</td><td>सेब</td><td>appled</td><td>appled</td></tr>
+    <tr><td>application</td><td>आवेदन</td><td>applied</td><td>applied</td></tr>
+    <tr><td>applestore</td><td>एप्पल स्टोर</td><td>stored</td><td>stored</td></tr>
+    <tr><td>write</td><td>लिखना</td><td>wrote</td><td>written</td></tr>
+    <tr><td>run</td><td>दौड़ना</td><td>ran</td><td>run</td></tr>
+    <tr><td>read</td><td>पढ़ना</td><td>read</td><td>read</td></tr>
+    <tr><td>walk</td><td>चलना</td><td>walked</td><td>walked</td></tr>
+    <tr><td>call</td><td>बुलाना</td><td>called</td><td>called</td></tr>
 
-    <div id="result"></div>
+    <!-- You can add more rows manually here -->
+  </table>
 
-    <script>
-        function generateTeams() {
-            // Get all players from the form
-            const players = {
-                WK: [],
-                BAT: [],
-                AR: [],
-                BOWL: []
-            };
+  <script>
+    function searchWords() {
+      const input = document.getElementById("search").value.toLowerCase();
+      const table = document.getElementById("vocabTable");
+      const rows = table.getElementsByTagName("tr");
 
-            // Collect wicketkeeper players
-            for (let i = 1; i <= 2; i++) {
-                let playerName = document.querySelector(`input[name="wkPlayer${i}"]`).value;
-                let credit = document.querySelector(`input[name="wkCredit${i}"]`).value;
-                if (playerName && credit) {
-                    players.WK.push({ name: playerName, credit: parseFloat(credit), role: "WK" });
-                }
-            }
+      for (let i = 1; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName("td");
+        let match = false;
 
-            // Collect batsmen players
-            for (let i = 1; i <= 4; i++) {
-                let playerName = document.querySelector(`input[name="batPlayer${i}"]`).value;
-                let credit = document.querySelector(`input[name="batCredit${i}"]`).value;
-                if (playerName && credit) {
-                    players.BAT.push({ name: playerName, credit: parseFloat(credit), role: "BAT" });
-                }
-            }
-
-            // Collect all-rounder players
-            for (let i = 1; i <= 2; i++) {
-                let playerName = document.querySelector(`input[name="arPlayer${i}"]`).value;
-                let credit = document.querySelector(`input[name="arCredit${i}"]`).value;
-                if (playerName && credit) {
-                    players.AR.push({ name: playerName, credit: parseFloat(credit), role: "AR" });
-                }
-            }
-
-            // Collect bowler players
-            for (let i = 1; i <= 3; i++) {
-                let playerName = document.querySelector(`input[name="bowlPlayer${i}"]`).value;
-                let credit = document.querySelector(`input[name="bowlCredit${i}"]`).value;
-                if (playerName && credit) {
-                    players.BOWL.push({ name: playerName, credit: parseFloat(credit), role: "BOWL" });
-                }
-            }
-
-            // Function to select random players from each category
-            function selectRandomPlayers(role, num) {
-                let selectedPlayers = [];
-                let availablePlayers = [...players[role]]; // Clone array to avoid mutating original
-                while (selectedPlayers.length < num && availablePlayers.length > 0) {
-                    let randomIndex = Math.floor(Math.random() * availablePlayers.length);
-                    selectedPlayers.push(availablePlayers.splice(randomIndex, 1)[0]);
-                }
-                return selectedPlayers;
-            }
-
-            let allTeams = [];
-
-            // Generate 20 teams
-            for (let i = 0; i < 20; i++) {
-                // Select one random player from each category (WK, BAT, AR, BOWL)
-                const selectedWk = selectRandomPlayers('WK', 1); // 1 Wicketkeeper
-                const selectedBat = selectRandomPlayers('BAT', 4); // 4 Batsmen
-                const selectedAr = selectRandomPlayers('AR', 2); // 2 All-rounders
-                const selectedBowl = selectRandomPlayers('BOWL', 3); // 3 Bowlers
-
-                // Combine all selected players
-                const team = [...selectedWk, ...selectedBat, ...selectedAr, ...selectedBowl];
-
-                // Randomly assign Captain and Vice-Captain
-                const captain = team[Math.floor(Math.random() * team.length)];
-                let viceCaptain;
-                do {
-                    viceCaptain = team[Math.floor(Math.random() * team.length)];
-                } while (viceCaptain === captain);
-
-                allTeams.push({
-                    team: team,
-                    captain: captain,
-                    viceCaptain: viceCaptain
-                });
-            }
-
-            // Display results
-            let resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = '';
-
-            allTeams.forEach((team, index) => {
-                let teamDiv = document.createElement('div');
-                teamDiv.classList.add('team');
-                teamDiv.innerHTML = `
-                    <h3>Team ${index + 1}</h3>
-                    <p><strong>Captain:</strong> ${team.captain.name} (${team.captain.role})</p>
-                    <p><strong>Vice-Captain:</strong> ${team.viceCaptain.name} (${team.viceCaptain.role})</p>
-                    <ul>
-                        ${team.team.map(player => `<li>${player.name} - Role: ${player.role} - Credit: ${player.credit}</li>`).join('')}
-                    </ul>
-                `;
-                resultDiv.appendChild(teamDiv);
-            });
+        for (let j = 0; j < cells.length; j++) {
+          if (cells[j].innerText.toLowerCase().includes(input)) {
+            match = true;
+            break;
+          }
         }
-    </script>
+
+        rows[i].style.display = match ? "" : "none";
+      }
+    }
+  </script>
 
 </body>
 </html>
