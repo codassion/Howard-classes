@@ -1,88 +1,949 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>My Vocabulary Sheet</title>
-  <style>
-    body {
-      font-family: Arial;
-      padding: 20px;
-      background-color: #f1f1f1;
-    }
-    h2 {
-      text-align: center;
-    }
-    #search {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      font-size: 16px;
-      border: 2px solid #888;
-      border-radius: 5px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: #fff;
-    }
-    th, td {
-      padding: 12px;
-      border: 1px solid #ccc;
-      text-align: center;
-    }
-    tr.hide {
-      display: none;
-    }
-  </style>
-</head>
-<body>
-
-  <h2>📘 My Vocabulary List</h2>
-
-  <input type="text" id="search" placeholder="🔍 Search a word..." onkeyup="searchWords()">
-
-  <table id="vocabTable">
-    <tr>
-      <th>Verb 1</th>
-      <th>Hindi Meaning</th>
-      <th>Verb 2</th>
-      <th>Verb 3</th>
-    </tr>
-
-    <!-- Add your own words here -->
-    <tr><td>apple</td><td>सेब</td><td>appled</td><td>appled</td></tr>
-    <tr><td>application</td><td>आवेदन</td><td>applied</td><td>applied</td></tr>
-    <tr><td>applestore</td><td>एप्पल स्टोर</td><td>stored</td><td>stored</td></tr>
-    <tr><td>write</td><td>लिखना</td><td>wrote</td><td>written</td></tr>
-    <tr><td>run</td><td>दौड़ना</td><td>ran</td><td>run</td></tr>
-    <tr><td>read</td><td>पढ़ना</td><td>read</td><td>read</td></tr>
-    <tr><td>walk</td><td>चलना</td><td>walked</td><td>walked</td></tr>
-    <tr><td>call</td><td>बुलाना</td><td>called</td><td>called</td></tr>
-
-    <!-- You can add more rows manually here -->
-  </table>
-
-  <script>
-    function searchWords() {
-      const input = document.getElementById("search").value.toLowerCase();
-      const table = document.getElementById("vocabTable");
-      const rows = table.getElementsByTagName("tr");
-
-      for (let i = 1; i < rows.length; i++) {
-        const cells = rows[i].getElementsByTagName("td");
-        let match = false;
-
-        for (let j = 0; j < cells.length; j++) {
-          if (cells[j].innerText.toLowerCase().includes(input)) {
-            match = true;
-            break;
-          }
+    <meta charset="UTF-8">
+    <title>My Vocabulary Sheet</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background-color: #f1f1f1;
         }
 
-        rows[i].style.display = match ? "" : "none";
-      }
-    }
-  </script>
+        h2 {
+            text-align: center;
+        }
+
+        #search {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border: 2px solid #888;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        tr.hide {
+            display: none;
+        }
+
+        #count {
+            text-align: right;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>📘 My Vocabulary List</h2>
+
+    <input type="text" id="search" placeholder="🔍 Search a word..." onkeyup="searchWords()">
+
+    <div id="count">Total Words: 0</div>
+
+    <table id="vocabTable">
+        <tr>
+            <th>Verb 1</th>
+            <th>Hindi Meaning</th>
+            <th>Verb 2</th>
+            <th>Verb 3</th>
+        </tr>
+
+        <!-- Add your own words here -->
+        <tr>
+            <td>accept</td>
+            <td>स्वीकार करना</td>
+            <td>accepted</td>
+            <td>accepted</td>
+        </tr>
+        <tr>
+            <td>achieve</td>
+            <td>प्राप्त करना</td>
+            <td>achieved</td>
+            <td>achieved</td>
+        </tr>
+        <tr>
+            <td>act</td>
+            <td>अभिनय करना / काम करना</td>
+            <td>acted</td>
+            <td>acted</td>
+        </tr>
+        <tr>
+            <td>add</td>
+            <td>जोड़ना</td>
+            <td>added</td>
+            <td>added</td>
+        </tr>
+        <tr>
+            <td>agree</td>
+            <td>सहमत होना</td>
+            <td>agreed</td>
+            <td>agreed</td>
+        </tr>
+        <tr>
+            <td>allow</td>
+            <td>अनुमति देना</td>
+            <td>allowed</td>
+            <td>allowed</td>
+        </tr>
+        <tr>
+            <td>answer</td>
+            <td>उत्तर देना</td>
+            <td>answered</td>
+            <td>answered</td>
+        </tr>
+        <tr>
+            <td>apply</td>
+            <td>आवेदन करना</td>
+            <td>applied</td>
+            <td>applied</td>
+        </tr>
+        <tr>
+            <td>ask</td>
+            <td>पूछना</td>
+            <td>asked</td>
+            <td>asked</td>
+        </tr>
+        <tr>
+            <td>attend</td>
+            <td>शिरकत करना</td>
+            <td>attended</td>
+            <td>attended</td>
+        </tr>
+        <tr>
+            <td>avoid</td>
+            <td>बचना</td>
+            <td>avoided</td>
+            <td>avoided</td>
+        </tr>
+        <tr>
+            <td>balance</td>
+            <td>संतुलित करना</td>
+            <td>balanced</td>
+            <td>balanced</td>
+        </tr>
+        <tr>
+            <td>build</td>
+            <td>बनाना</td>
+            <td>built</td>
+            <td>built</td>
+        </tr>
+        <tr>
+            <td>buy</td>
+            <td>खरीदना</td>
+            <td>bought</td>
+            <td>bought</td>
+        </tr>
+        <tr>
+            <td>call</td>
+            <td>बुलाना</td>
+            <td>called</td>
+            <td>called</td>
+        </tr>
+        <tr>
+            <td>change</td>
+            <td>बदलना</td>
+            <td>changed</td>
+            <td>changed</td>
+        </tr>
+        <tr>
+            <td>choose</td>
+            <td>चुनना</td>
+            <td>chose</td>
+            <td>chosen</td>
+        </tr>
+        <tr>
+            <td>clean</td>
+            <td>साफ करना</td>
+            <td>cleaned</td>
+            <td>cleaned</td>
+        </tr>
+        <tr>
+            <td>close</td>
+            <td>बंद करना</td>
+            <td>closed</td>
+            <td>closed</td>
+        </tr>
+        <tr>
+            <td>communicate</td>
+            <td>संचार करना</td>
+            <td>communicated</td>
+            <td>communicated</td>
+        </tr>
+        <tr>
+            <td>compare</td>
+            <td>तुलना करना</td>
+            <td>compared</td>
+            <td>compared</td>
+        </tr>
+        <tr>
+            <td>complete</td>
+            <td>पूरा करना</td>
+            <td>completed</td>
+            <td>completed</td>
+        </tr>
+        <tr>
+            <td>consider</td>
+            <td>विचार करना</td>
+            <td>considered</td>
+            <td>considered</td>
+        </tr>
+        <tr>
+            <td>continue</td>
+            <td>जारी रखना</td>
+            <td>continued</td>
+            <td>continued</td>
+        </tr>
+        <tr>
+            <td>create</td>
+            <td>बनाना / रचना</td>
+            <td>created</td>
+            <td>created</td>
+        </tr>
+        <tr>
+            <td>decide</td>
+            <td>निर्णय लेना</td>
+            <td>decided</td>
+            <td>decided</td>
+        </tr>
+        <tr>
+            <td>deliver</td>
+            <td>डिलीवर करना</td>
+            <td>delivered</td>
+            <td>delivered</td>
+        </tr>
+        <tr>
+            <td>develop</td>
+            <td>विकास करना</td>
+            <td>developed</td>
+            <td>developed</td>
+        </tr>
+        <tr>
+            <td>discuss</td>
+            <td>चर्चा करना</td>
+            <td>discussed</td>
+            <td>discussed</td>
+        </tr>
+        <tr>
+            <td>divide</td>
+            <td>विभाजित करना</td>
+            <td>divided</td>
+            <td>divided</td>
+        </tr>
+        <tr>
+            <td>do</td>
+            <td>करना</td>
+            <td>did</td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>draw</td>
+            <td>खींचना</td>
+            <td>drew</td>
+            <td>drawn</td>
+        </tr>
+        <tr>
+            <td>drive</td>
+            <td>चालक होना</td>
+            <td>drove</td>
+            <td>driven</td>
+        </tr>
+        <tr>
+            <td>earn</td>
+            <td>कमाना</td>
+            <td>earned</td>
+            <td>earned</td>
+        </tr>
+        <tr>
+            <td>eat</td>
+            <td>खाना</td>
+            <td>ate</td>
+            <td>eaten</td>
+        </tr>
+        <tr>
+            <td>encourage</td>
+            <td>प्रोत्साहित करना</td>
+            <td>encouraged</td>
+            <td>encouraged</td>
+        </tr>
+        <tr>
+            <td>explain</td>
+            <td>समझाना</td>
+            <td>explained</td>
+            <td>explained</td>
+        </tr>
+        <tr>
+            <td>express</td>
+            <td>व्यक्त करना</td>
+            <td>expressed</td>
+            <td>expressed</td>
+        </tr>
+        <tr>
+            <td>fall</td>
+            <td>गिरना</td>
+            <td>fell</td>
+            <td>fallen</td>
+        </tr>
+        <tr>
+            <td>feel</td>
+            <td>महसूस करना</td>
+            <td>felt</td>
+            <td>felt</td>
+        </tr>
+        <tr>
+            <td>find</td>
+            <td>पाना</td>
+            <td>found</td>
+            <td>found</td>
+        </tr>
+        <tr>
+            <td>follow</td>
+            <td>पालन करना</td>
+            <td>followed</td>
+            <td>followed</td>
+        </tr>
+        <tr>
+            <td>forget</td>
+            <td>भूल जाना</td>
+            <td>forgot</td>
+            <td>forgotten</td>
+        </tr>
+        <tr>
+            <td>give</td>
+            <td>देना</td>
+            <td>gave</td>
+            <td>given</td>
+        </tr>
+        <tr>
+            <td>go</td>
+            <td>जाना</td>
+            <td>went</td>
+            <td>gone</td>
+        </tr>
+        <tr>
+            <td>grow</td>
+            <td>बढ़ना</td>
+            <td>grew</td>
+            <td>grown</td>
+        </tr>
+        <tr>
+            <td>have</td>
+            <td>रखना / होना</td>
+            <td>had</td>
+            <td>had</td>
+        </tr>
+        <tr>
+            <td>help</td>
+            <td>मदद करना</td>
+            <td>helped</td>
+            <td>helped</td>
+        </tr>
+        <tr>
+            <td>hold</td>
+            <td>पकड़ना</td>
+            <td>held</td>
+            <td>held</td>
+        </tr>
+        </td>
+        </tr>
+        <tr>
+            <td>hold</td>
+            <td>पकड़ना</td>
+            <td>held</td>
+            <td>held</td>
+        </tr>
+        <tr>
+            <td>hope</td>
+            <td>आशा करना</td>
+            <td>hoped</td>
+            <td>hoped</td>
+        </tr>
+        <tr>
+            <td>hurt</td>
+            <td>चोट पहुँचाना</td>
+            <td>hurt</td>
+            <td>hurt</td>
+        </tr>
+        <tr>
+            <td>improve</td>
+            <td>सुधारना</td>
+            <td>improved</td>
+            <td>improved</td>
+        </tr>
+        <tr>
+            <td>include</td>
+            <td>शामिल करना</td>
+            <td>included</td>
+            <td>included</td>
+        </tr>
+        <tr>
+            <td>increase</td>
+            <td>बढ़ाना</td>
+            <td>increased</td>
+            <td>increased</td>
+        </tr>
+        <tr>
+            <td>introduce</td>
+            <td>परिचय कराना</td>
+            <td>introduced</td>
+            <td>introduced</td>
+        </tr>
+        <tr>
+            <td>invite</td>
+            <td>निमंत्रण देना</td>
+            <td>invited</td>
+            <td>invited</td>
+        </tr>
+        <tr>
+            <td>join</td>
+            <td>शामिल होना</td>
+            <td>joined</td>
+            <td>joined</td>
+        </tr>
+        <tr>
+            <td>jump</td>
+            <td>कूदना</td>
+            <td>jumped</td>
+            <td>jumped</td>
+        </tr>
+        <tr>
+            <td>keep</td>
+            <td>रखना</td>
+            <td>kept</td>
+            <td>kept</td>
+        </tr>
+        <tr>
+            <td>know</td>
+            <td>जानना</td>
+            <td>knew</td>
+            <td>known</td>
+        </tr>
+        <tr>
+            <td>laugh</td>
+            <td>हँसना</td>
+            <td>laughed</td>
+            <td>laughed</td>
+        </tr>
+        <tr>
+            <td>learn</td>
+            <td>सीखना</td>
+            <td>learned</td>
+            <td>learned</td>
+        </tr>
+        <tr>
+            <td>leave</td>
+            <td>छोड़ना / जाना</td>
+            <td>left</td>
+            <td>left</td>
+        </tr>
+        <tr>
+            <td>like</td>
+            <td>पसंद करना</td>
+            <td>liked</td>
+            <td>liked</td>
+        </tr>
+        <tr>
+            <td>listen</td>
+            <td>सुनना</td>
+            <td>listened</td>
+            <td>listened</td>
+        </tr>
+        <tr>
+            <td>live</td>
+            <td>जीना</td>
+            <td>lived</td>
+            <td>lived</td>
+        </tr>
+        <tr>
+            <td>look</td>
+            <td>देखना</td>
+            <td>looked</td>
+            <td>looked</td>
+        </tr>
+        <tr>
+            <td>lose</td>
+            <td>खोना</td>
+            <td>lost</td>
+            <td>lost</td>
+        </tr>
+        <tr>
+            <td>love</td>
+            <td>प्यार करना</td>
+            <td>loved</td>
+            <td>loved</td>
+        </tr>
+        <tr>
+            <td>make</td>
+            <td>बनाना</td>
+            <td>made</td>
+            <td>made</td>
+        </tr>
+        <tr>
+            <td>manage</td>
+            <td>प्रबंध करना</td>
+            <td>managed</td>
+            <td>managed</td>
+        </tr>
+        <tr>
+            <td>move</td>
+            <td>चलना / हिलना</td>
+            <td>moved</td>
+            <td>moved</td>
+        </tr>
+        <tr>
+            <td>need</td>
+            <td>ज़रूरत होना</td>
+            <td>needed</td>
+            <td>needed</td>
+        </tr>
+        <tr>
+            <td>offer</td>
+            <td>प्रस्ताव देना</td>
+            <td>offered</td>
+            <td>offered</td>
+        </tr>
+        <tr>
+            <td>open</td>
+            <td>खोलना</td>
+            <td>opened</td>
+            <td>opened</td>
+        </tr>
+        <tr>
+            <td>order</td>
+            <td>आदेश देना</td>
+            <td>ordered</td>
+            <td>ordered</td>
+        </tr>
+        <tr>
+            <td>organize</td>
+            <td>आयोजित करना</td>
+            <td>organized</td>
+            <td>organized</td>
+        </tr>
+        <tr>
+            <td>pay</td>
+            <td>भुगतान करना</td>
+            <td>paid</td>
+            <td>paid</td>
+        </tr>
+        <tr>
+            <td>perform</td>
+            <td>प्रदर्शन करना</td>
+            <td>performed</td>
+            <td>performed</td>
+        </tr>
+        <tr>
+            <td>play</td>
+            <td>खेलना</td>
+            <td>played</td>
+            <td>played</td>
+        </tr>
+        <tr>
+            <td>practice</td>
+            <td>अभ्यास करना</td>
+            <td>practiced</td>
+            <td>practiced</td>
+        </tr>
+        <tr>
+            <td>prefer</td>
+            <td>तरजीह देना</td>
+            <td>preferred</td>
+            <td>preferred</td>
+        </tr>
+        <tr>
+            <td>prepare</td>
+            <td>तैयार करना</td>
+            <td>prepared</td>
+            <td>prepared</td>
+        </tr>
+        <tr>
+            <td>present</td>
+            <td>प्रस्तुत करना</td>
+            <td>presented</td>
+            <td>presented</td>
+        </tr>
+        <tr>
+            <td>prevent</td>
+            <td>रोकना</td>
+            <td>prevented</td>
+            <td>prevented</td>
+        </tr>
+        <tr>
+            <td>produce</td>
+            <td>उत्पादित करना</td>
+            <td>produced</td>
+            <td>produced</td>
+        </tr>
+        <tr>
+            <td>promise</td>
+            <td>वादा करना</td>
+            <td>promised</td>
+            <td>promised</td>
+        </tr>
+        <tr>
+            <td>protect</td>
+            <td>सुरक्षित रखना</td>
+            <td>protected</td>
+            <td>protected</td>
+        </tr>
+        <tr>
+            <td>prove</td>
+            <td>साबित करना</td>
+            <td>proved</td>
+            <td>proved</td>
+        </tr>
+        <tr>
+            <td>provide</td>
+            <td>प्रदान करना</td>
+            <td>provided</td>
+            <td>provided</td>
+        </tr>
+        <tr>
+            <td>put</td>
+            <td>रखना</td>
+            <td>put</td>
+            <td>put</td>
+        </tr>
+        <tr>
+            <td>reach</td>
+            <td>पहुँचना</td>
+            <td>reached</td>
+            <td>reached</td>
+        </tr>
+        <tr>
+            <td>read</td>
+            <td>पढ़ना</td>
+            <td>read</td>
+            <td>read</td>
+        </tr>
+        <tr>
+            <td>receive</td>
+            <td>प्राप्त करना</td>
+            <td>received</td>
+            <td>received</td>
+        </tr>
+        <tr>
+            <td>recognize</td>
+            <td>पहचानना</td>
+            <td>recognized</td>
+            <td>recognized</td>
+        </tr>
+        <tr>
+            <td>reduce</td>
+            <td>कम करना</td>
+            <td>reduced</td>
+            <td>reduced</td>
+        </tr>
+        <tr>
+            <td>remember</td>
+            <td>याद रखना</td>
+            <td>remembered</td>
+            <td>remembered</td>
+        </tr>
+        <tr>
+            <td>repeat</td>
+            <td>दोहराना</td>
+            <td>repeated</td>
+            <td>repeated</td>
+        </tr>
+        <tr>
+            <td>replace</td>
+            <td>बदलना</td>
+            <td>replaced</td>
+            <td>replaced</td>
+        </tr>
+        <tr>
+            <td>reply</td>
+            <td>जवाब देना</td>
+            <td>replied</td>
+            <td>replied</td>
+        </tr>
+        <tr>
+            <td>report</td>
+            <td>रिपोर्ट करना</td>
+            <td>reported</td>
+            <td>reported</td>
+        </tr>
+        <tr>
+            <td>request</td>
+            <td>अनुरोध करना</td>
+            <td>requested</td>
+            <td>requested</td>
+        </tr>
+        <tr>
+            <td>respect</td>
+            <td>सम्मान करना</td>
+            <td>respected</td>
+            <td>respected</td>
+        </tr>
+        <tr>
+            <td>rest</td>
+            <td>आराम करना</td>
+            <td>rested</td>
+            <td>rested</td>
+        </tr>
+        <tr>
+            <td>return</td>
+            <td>वापस आना</td>
+            <td>returned</td>
+            <td>returned</td>
+        </tr>
+        <tr>
+            <td>rise</td>
+            <td>उठना</td>
+            <td>rose</td>
+            <td>risen</td>
+        </tr>
+        <tr>
+            <td>run</td>
+            <td>दौड़ना</td>
+            <td>ran</td>
+            <td>run</td>
+        </tr>
+        <tr>
+            <td>save</td>
+            <td>बचाना</td>
+            <td>saved</td>
+            <td>saved</td>
+        </tr>
+        <tr>
+            <td>say</td>
+            <td>कहना</td>
+            <td>said</td>
+            <td>said</td>
+        </tr>
+        <tr>
+            <td>see</td>
+            <td>देखना</td>
+            <td>saw</td>
+            <td>seen</td>
+        </tr>
+        <tr>
+            <td>sell</td>
+            <td>बेचना</td>
+            <td>sold</td>
+            <td>sold</td>
+        </tr>
+        <tr>
+            <td>send</td>
+            <td>भेजना</td>
+            <td>sent</td>
+            <td>sent</td>
+        </tr>
+        <tr>
+            <td>set</td>
+            <td>सेट करना</td>
+            <td>set</td>
+            <td>set</td>
+        </tr>
+        <tr>
+            <td>show</td>
+            <td>दिखाना</td>
+            <td>showed</td>
+            <td>shown</td>
+        </tr>
+        <tr>
+            <td>shut</td>
+            <td>बंद करना</td>
+            <td>shut</td>
+            <td>shut</td>
+        </tr>
+        <tr>
+            <td>sing</td>
+            <td>गाना</td>
+            <td>sang</td>
+            <td>sung</td>
+        </tr>
+        <tr>
+            <td>sit</td>
+            <td>बैठना</td>
+            <td>sat</td>
+            <td>sat</td>
+        </tr>
+        <tr>
+            <td>sleep</td>
+            <td>सोना</td>
+            <td>slept</td>
+            <td>slept</td>
+        </tr>
+        <tr>
+            <td>speak</td>
+            <td>बोलना</td>
+            <td>spoke</td>
+            <td>spoken</td>
+        </tr>
+        <tr>
+            <td>spend</td>
+            <td>खर्च करना</td>
+            <td>spent</td>
+            <td>spent</td>
+        </tr>
+        <tr>
+            <td>stand</td>
+            <td>खड़ा होना</td>
+            <td>stood</td>
+            <td>stood</td>
+        </tr>
+        <tr>
+            <td>start</td>
+            <td>शुरू करना</td>
+            <td>started</td>
+            <td>started</td>
+        </tr>
+        <tr>
+            <td>stay</td>
+            <td>रहना</td>
+            <td>stayed</td>
+            <td>stayed</td>
+        </tr>
+        <tr>
+            <td>stop</td>
+            <td>रुकना</td>
+            <td>stopped</td>
+            <td>stopped</td>
+        </tr>
+        <tr>
+            <td>study</td>
+            <td>पढ़ाई करना</td>
+            <td>studied</td>
+            <td>studied</td>
+        </tr>
+        <tr>
+            <td>suggest</td>
+            <td>सुझाव देना</td>
+            <td>suggested</td>
+            <td>suggested</td>
+        </tr>
+        <tr>
+            <td>take</td>
+            <td>लेना</td>
+            <td>took</td>
+            <td>taken</td>
+        </tr>
+        <tr>
+            <td>talk</td>
+            <td>बात करना</td>
+            <td>talked</td>
+            <td>talked</td>
+        </tr>
+        <tr>
+            <td>teach</td>
+            <td>सिखाना</td>
+            <td>taught</td>
+            <td>taught</td>
+        </tr>
+        <tr>
+            <td>tell</td>
+            <td>बताना</td>
+            <td>told</td>
+            <td>told</td>
+        </tr>
+        <tr>
+            <td>think</td>
+            <td>सोचना</td>
+            <td>thought</td>
+            <td>thought</td>
+        </tr>
+        <tr>
+            <td>try</td>
+            <td>कोशिश करना</td>
+            <td>tried</td>
+            <td>tried</td>
+        </tr>
+        <tr>
+            <td>turn</td>
+            <td>मोड़ना</td>
+            <td>turned</td>
+            <td>turned</td>
+        </tr>
+        <tr>
+            <td>understand</td>
+            <td>समझना</td>
+            <td>understood</td>
+            <td>understood</td>
+        </tr>
+        <tr>
+            <td>use</td>
+            <td>इस्तेमाल करना</td>
+            <td>used</td>
+            <td>used</td>
+        </tr>
+        <tr>
+            <td>visit</td>
+            <td>दौरा करना</td>
+            <td>visited</td>
+            <td>visited</td>
+        </tr>
+        <tr>
+            <td>wait</td>
+            <td>इंतजार करना</td>
+            <td>waited</td>
+            <td>waited</td>
+        </tr>
+        <tr>
+            <td>walk</td>
+            <td>चलना</td>
+            <td>walked</td>
+            <td>walked</td>
+        </tr>
+
+
+
+
+        <!-- You can add more rows manually here -->
+    </table>
+
+    <script>
+        function searchWords() {
+            const input = document.getElementById("search").value.toLowerCase();
+            const table = document.getElementById("vocabTable");
+            const rows = table.getElementsByTagName("tr");
+            let visibleCount = 0;
+
+            for (let i = 1; i < rows.length; i++) { // skip header row
+                const cells = rows[i].getElementsByTagName("td");
+                let match = false;
+
+                for (let j = 0; j < cells.length; j++) {
+                    if (cells[j].innerText.toLowerCase().includes(input)) {
+                        match = true;
+                        break;
+                    }
+                }
+
+                rows[i].style.display = match ? "" : "none";
+
+                if (match) visibleCount++;
+            }
+
+            document.getElementById("count").innerText = "Total Words: " + visibleCount;
+        }
+
+        // Initialize count on page load
+        window.onload = () => {
+            const rows = document.getElementById("vocabTable").getElementsByTagName("tr");
+            document.getElementById("count").innerText = "Total Words: " + (rows.length - 1);
+        }
+    </script>
 
 </body>
+
 </html>
