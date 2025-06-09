@@ -1,75 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>My Vocabulary Sheet</title>
-    <style>
-        body {
-            font-family: Arial;
-            padding: 20px;
-            background-color: #f1f1f1;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        #search {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            font-size: 16px;
-            border: 2px solid #888;
-            border-radius: 5px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #fff;
-        }
-
-        th,
-        td {
-            padding: 12px;
-            border: 1px solid #ccc;
-            text-align: center;
-        }
-
-        tr.hide {
-            display: none;
-        }
-
-        #count {
-            text-align: right;
-            margin-bottom: 15px;
-            font-weight: bold;
-            font-size: 16px;
-            color: #333;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/29/29302.png
+" type="image/x-icon">
+  <title>HOWARD CLASSES</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background-color: #f1f1f1;
+    }
+    h2 {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      
+    }
+    #search {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      border: 2px solid #888;
+      border-radius: 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    tr.hide {
+      display: none;
+    }
+    #count {
+      text-align: right;
+      margin-bottom: 15px;
+      font-weight: bold;
+      font-size: 16px;
+      color: #333;
+    }
+    .logo {
+      height: 40px;
+      border-radius: 50%;
+    }
+  </style>
 </head>
-
 <body>
 
-    <h2>📘 My Vocabulary List</h2>
+  <h2>
+    <img src="logo.png" alt="Logo" class="logo">
+    Akshat's Vocab World
+  </h2>
 
-    <input type="text" id="search" placeholder="🔍 Search a word..." onkeyup="searchWords()">
+  <input type="text" id="search" placeholder="🔍 Search a word..." onkeyup="searchWords()">
 
-    <div id="count">Total Words: 0</div>
+  <div id="count">Total Words: 0</div>
 
-    <table id="vocabTable">
-        <tr>
-            <th>Verb 1</th>
-            <th>Hindi Meaning</th>
-            <th>Verb 2</th>
-            <th>Verb 3</th>
-        </tr>
+  <table id="vocabTable">
+    <tr>
+      <th>Verb 1</th>
+      <th>Hindi Meaning</th>
+      <th>Verb 2</th>
+      <th>Verb 3</th>
+    </tr>
 
-        <!-- Add your own words here -->
-         
-         <tr>
+    <!-- Add your own words here -->
+    <tr>
             <td>elaborate</td>
             <td>विस्तार से समझाना, विस्तार करना</td>
             <td>elaborated</td>
@@ -989,46 +993,39 @@
             <td>null</td>
             <td>null</td>
         </tr>
+  </table>
 
+  <script>
+    function searchWords() {
+      const input = document.getElementById("search").value.toLowerCase();
+      const table = document.getElementById("vocabTable");
+      const rows = table.getElementsByTagName("tr");
+      let visibleCount = 0;
 
+      for (let i = 1; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName("td");
+        let match = false;
 
-
-        <!-- You can add more rows manually here -->
-    </table>
-
-    <script>
-        function searchWords() {
-            const input = document.getElementById("search").value.toLowerCase();
-            const table = document.getElementById("vocabTable");
-            const rows = table.getElementsByTagName("tr");
-            let visibleCount = 0;
-
-            for (let i = 1; i < rows.length; i++) { // skip header row
-                const cells = rows[i].getElementsByTagName("td");
-                let match = false;
-
-                for (let j = 0; j < cells.length; j++) {
-                    if (cells[j].innerText.toLowerCase().includes(input)) {
-                        match = true;
-                        break;
-                    }
-                }
-
-                rows[i].style.display = match ? "" : "none";
-
-                if (match) visibleCount++;
-            }
-
-            document.getElementById("count").innerText = "Total Words: " + visibleCount;
+        for (let j = 0; j < cells.length; j++) {
+          if (cells[j].innerText.toLowerCase().includes(input)) {
+            match = true;
+            break;
+          }
         }
 
-        // Initialize count on page load
-        window.onload = () => {
-            const rows = document.getElementById("vocabTable").getElementsByTagName("tr");
-            document.getElementById("count").innerText = "Total Words: " + (rows.length - 1);
-        }
-    </script>
+        rows[i].style.display = match ? "" : "none";
+        if(match) visibleCount++;
+      }
+
+      document.getElementById("count").innerText = "Total Words: " + visibleCount;
+    }
+
+    // Initialize word count on page load
+    window.onload = () => {
+      const rows = document.getElementById("vocabTable").getElementsByTagName("tr");
+      document.getElementById("count").innerText = "Total Words: " + (rows.length - 1);
+    }
+  </script>
 
 </body>
-
 </html>
