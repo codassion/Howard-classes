@@ -1,84 +1,696 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/29/29302.png
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/29/29302.png
 " type="image/x-icon">
-  <title>HOWARD CLASSES</title>
-  <style>
-    body {
-      font-family: Arial;
-      padding: 20px;
-      background-color: #f1f1f1;
-    }
-    h2 {
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      
-    }
-    #search {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      font-size: 16px;
-      border: 2px solid #888;
-      border-radius: 5px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: #fff;
-    }
-    th, td {
-      padding: 12px;
-      border: 1px solid #ccc;
-      text-align: center;
-    }
-    tr.hide {
-      display: none;
-    }
-    #count {
-      text-align: right;
-      margin-bottom: 15px;
-      font-weight: bold;
-      font-size: 16px;
-      color: #333;
-    }
-    .logo {
-      height: 40px;
-      border-radius: 50%;
-    }
-  </style>
+    <title>HOWARD CLASSES</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        h2 {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+        }
+
+        #search {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border: 2px solid #888;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        tr.hide {
+            display: none;
+        }
+
+        #count {
+            text-align: right;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .logo {
+            height: 40px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
+
 <body>
 
-  <h2>
-    <img src="logo.png" alt="Logo" class="logo">
-    Amit's Vocab World
-  </h2>
+    <h2>
+        <img src="logo.png" alt="Logo" class="logo">
+        Akshat's Vocab World
+    </h2>
 
-  <input type="text" id="search" placeholder="🔍 Search a word..." onkeyup="searchWords()">
+    <input type="text" id="search" placeholder="🔍 Search a word..." onkeyup="searchWords()">
 
-  <div id="count">Total Words: 0</div>
+    <div id="count">Total Words: 0</div>
 
-  <table id="vocabTable">
-    <tr>
-      <th>Verb 1</th>
-      <th>Hindi Meaning</th>
-      <th>Verb 2</th>
-      <th>Verb 3</th>
-    </tr>
+    <table id="vocabTable">
+        <tr>
+            <th>Verb 1</th>
+            <th>Hindi Meaning</th>
+            <th>Verb 2</th>
+            <th>Verb 3</th>
+        </tr>
 
-    <!-- Add your own words here -->
-    <tr>
+        <!-- Add your own words here -->
+
+        <tr>
+            <td>sweep</td>
+            <td>झाड़ू लगाना</td>
+            <td>swept</td>
+            <td>swept</td>
+        </tr>
+        <tr>
+            <td>mop the floor</td>
+            <td>पोछा लगाना</td>
+            <td>mopped the floor</td>
+            <td>mopped the floor</td>
+        </tr>
+        <tr>
+            <td>do up the room</td>
+            <td>कमरा सजाना</td>
+            <td>did up the room</td>
+            <td>done up the room</td>
+        </tr>
+        <tr>
+            <td>bask the bread</td>
+            <td>ब्रेड सेंकना</td>
+            <td>basked the bread</td>
+            <td>basked the bread</td>
+        </tr>
+        <tr>
+            <td>wring the clothes</td>
+            <td>कपड़े निचोड़ना</td>
+            <td>wrung the clothes</td>
+            <td>wrung the clothes</td>
+        </tr>
+        <tr>
+            <td>air the clothes</td>
+            <td>कपड़े सुखाना</td>
+            <td>aired the clothes</td>
+            <td>aired the clothes</td>
+        </tr>
+        <tr>
+            <td>take siesta</td>
+            <td>झपकी लेना</td>
+            <td>took siesta</td>
+            <td>taken siesta</td>
+        </tr>
+        <tr>
+            <td>take nap</td>
+            <td>झपकी लेना</td>
+            <td>took nap</td>
+            <td>taken nap</td>
+        </tr>
+        <tr>
+            <td>do down others</td>
+            <td>दूसरों को नीचा दिखाना</td>
+            <td>did down others</td>
+            <td>done down others</td>
+        </tr>
+        <tr>
+            <td>do gossip</td>
+            <td>गपशप करना</td>
+            <td>did gossip</td>
+            <td>done gossip</td>
+        </tr>
+        <tr>
+            <td>snoop around</td>
+            <td>ताक-झांक करना</td>
+            <td>snooped around</td>
+            <td>snooped around</td>
+        </tr>
+        <tr>
+            <td>tattle</td>
+            <td>चुगली करना</td>
+            <td>tattled</td>
+            <td>tattled</td>
+        </tr>
+        <tr>
+            <td>provoke</td>
+            <td>उकसाना</td>
+            <td>provoked</td>
+            <td>provoked</td>
+        </tr>
+        <tr>
+            <td>snatch</td>
+            <td>छीनना</td>
+            <td>snatched</td>
+            <td>snatched</td>
+        </tr>
+        <tr>
+            <td>stare</td>
+            <td>घूरना</td>
+            <td>stared</td>
+            <td>stared</td>
+        </tr>
+        <tr>
+            <td>gaze</td>
+            <td>टकटकी लगाकर देखना</td>
+            <td>gazed</td>
+            <td>gazed</td>
+        </tr>
+        <tr>
+            <td>apologize</td>
+            <td>माफी मांगना</td>
+            <td>apologized</td>
+            <td>apologized</td>
+        </tr>
+        <tr>
+            <td>forgive</td>
+            <td>माफ करना</td>
+            <td>forgave</td>
+            <td>forgiven</td>
+        </tr>
+        <tr>
+            <td>blame</td>
+            <td>दोष देना</td>
+            <td>blamed</td>
+            <td>blamed</td>
+        </tr>
+        <tr>
+            <td>claim</td>
+            <td>दावा करना</td>
+            <td>claimed</td>
+            <td>claimed</td>
+        </tr>
+        <tr>
+            <td>giggle</td>
+            <td>खिलखिलाना</td>
+            <td>giggled</td>
+            <td>giggled</td>
+        </tr>
+        <tr>
+            <td>gargle</td>
+            <td>कुल्ला करना</td>
+            <td>gargled</td>
+            <td>gargled</td>
+        </tr>
+        <tr>
+            <td>make an excuse</td>
+            <td>बहाना बनाना</td>
+            <td>made an excuse</td>
+            <td>made an excuse</td>
+        </tr>
+        <tr>
+            <td>make fuss</td>
+            <td>हंगामा करना</td>
+            <td>made fuss</td>
+            <td>made fuss</td>
+        </tr>
+        <tr>
+            <td>deceive</td>
+            <td>धोखा देना</td>
+            <td>deceived</td>
+            <td>deceived</td>
+        </tr>
+        <tr>
+            <td>ditch</td>
+            <td>छोड़ देना</td>
+            <td>ditched</td>
+            <td>ditched</td>
+        </tr>
+        <tr>
+            <td>drench</td>
+            <td>भिगोना</td>
+            <td>drenched</td>
+            <td>drenched</td>
+        </tr>
+        <tr>
+            <td>sulk the mouth</td>
+            <td>मुंह फुलाना</td>
+            <td>sulked the mouth</td>
+            <td>sulked the mouth</td>
+        </tr>
+        <tr>
+            <td>irritate others</td>
+            <td>दूसरों को चिढ़ाना</td>
+            <td>irritated others</td>
+            <td>irritated others</td>
+        </tr>
+        <tr>
+            <td>get in the bus</td>
+            <td>बस में चढ़ना</td>
+            <td>got in the bus</td>
+            <td>got in the bus</td>
+        </tr>
+        <tr>
+            <td>get down from the bus</td>
+            <td>बस से उतरना</td>
+            <td>got down from the bus</td>
+            <td>got down from the bus</td>
+        </tr>
+        <tr>
+            <td>tickle</td>
+            <td>गुदगुदी करना</td>
+            <td>tickled</td>
+            <td>tickled</td>
+        </tr>
+        <tr>
+            <td>boss over</td>
+            <td>दबंगई करना</td>
+            <td>bossed over</td>
+            <td>bossed over</td>
+        </tr>
+        <tr>
+            <td>water the plants</td>
+            <td>पौधों को पानी देना</td>
+            <td>watered the plants</td>
+            <td>watered the plants</td>
+        </tr>
+        <tr>
+            <td>teach a lesson</td>
+            <td>सबक सिखाना</td>
+            <td>taught a lesson</td>
+            <td>taught a lesson</td>
+        </tr>
+        <tr>
+            <td>shake</td>
+            <td>हिलाना</td>
+            <td>shook</td>
+            <td>shaken</td>
+        </tr>
+        <tr>
+            <td>ride rash</td>
+            <td>तेज सवारी करना</td>
+            <td>rode rash</td>
+            <td>ridden rash</td>
+        </tr>
+        <tr>
+            <td>study further</td>
+            <td>आगे पढ़ाई करना</td>
+            <td>studied further</td>
+            <td>studied further</td>
+        </tr>
+        <tr>
+            <td>speak blunt</td>
+            <td>सीधा-सपाट बोलना</td>
+            <td>spoke blunt</td>
+            <td>spoken blunt</td>
+        </tr>
+        <tr>
+            <td>baffle</td>
+            <td>चकरा देना</td>
+            <td>baffled</td>
+            <td>baffled</td>
+        </tr>
+        <tr>
+            <td>play bale & stick</td>
+            <td>गिल्ली डंडा खेलना</td>
+            <td>played bale & stick</td>
+            <td>played bale & stick</td>
+        </tr>
+        <tr>
+            <td>play tic tac toe</td>
+            <td>टिक टैक टो खेलना</td>
+            <td>played tic tac toe</td>
+            <td>played tic tac toe</td>
+        </tr>
+        <tr>
+            <td>mislead</td>
+            <td>गुमराह करना</td>
+            <td>misled</td>
+            <td>misled</td>
+        </tr>
+        <tr>
+            <td>get hyper</td>
+            <td>उत्तेजित होना</td>
+            <td>got hyper</td>
+            <td>got hyper</td>
+        </tr>
+        <tr>
+            <td>talk big</td>
+            <td>शेखी बघारना</td>
+            <td>talked big</td>
+            <td>talked big</td>
+        </tr>
+        <tr>
+            <td>keep an eye on</td>
+            <td>नजर रखना</td>
+            <td>kept an eye on</td>
+            <td>kept an eye on</td>
+        </tr>
+        <tr>
+            <td>talk turkey</td>
+            <td>साफ-साफ बात करना</td>
+            <td>talked turkey</td>
+            <td>talked turkey</td>
+        </tr>
+        <tr>
+            <td>do naughty things</td>
+            <td>शरारत करना</td>
+            <td>did naughty things</td>
+            <td>done naughty things</td>
+        </tr>
+        <tr>
+            <td>fetch the food</td>
+            <td>खाना लाना</td>
+            <td>fetched the food</td>
+            <td>fetched the food</td>
+        </tr>
+        <tr>
+            <td>feed the food</td>
+            <td>खाना खिलाना</td>
+            <td>fed the food</td>
+            <td>fed the food</td>
+        </tr>
+        <tr>
+            <td>make a noise</td>
+            <td>शोर करना</td>
+            <td>made a noise</td>
+            <td>made a noise</td>
+        </tr>
+        <tr>
+            <td>bask in sun</td>
+            <td>धूप सेंकना</td>
+            <td>basked in sun</td>
+            <td>basked in sun</td>
+        </tr>
+        <tr>
+            <td>dress up the wound</td>
+            <td>घाव पर पट्टी बांधना</td>
+            <td>dressed up the wound</td>
+            <td>dressed up the wound</td>
+        </tr>
+        <tr>
+            <td>do domestic work</td>
+            <td>घरेलू काम करना</td>
+            <td>did domestic work</td>
+            <td>done domestic work</td>
+        </tr>
+        <tr>
+            <td>take yawn</td>
+            <td>जम्हाई लेना</td>
+            <td>took yawn</td>
+            <td>taken yawn</td>
+        </tr>
+        <tr>
+            <td>take the stale food</td>
+            <td>बासी खाना लेना</td>
+            <td>took the stale food</td>
+            <td>taken the stale food</td>
+        </tr>
+        <tr>
+            <td>take revenge</td>
+            <td>बदला लेना</td>
+            <td>took revenge</td>
+            <td>taken revenge</td>
+        </tr>
+        <tr>
+            <td>nourish the child</td>
+            <td>बच्चे को पालना</td>
+            <td>nourished the child</td>
+            <td>nourished the child</td>
+        </tr>
+        <tr>
+            <td>beat him black & blue</td>
+            <td>काले-नीले कर देना</td>
+            <td>beat him black & blue</td>
+            <td>beaten him black & blue</td>
+        </tr>
+        <tr>
+            <td>go over the parents</td>
+            <td>माता-पिता से मिलना</td>
+            <td>went over the parents</td>
+            <td>gone over the parents</td>
+        </tr>
+        <tr>
+            <td>splash the face</td>
+            <td>चेहरे पर पानी छिड़कना</td>
+            <td>splashed the face</td>
+            <td>splashed the face</td>
+        </tr>
+        <tr>
+            <td>crash the party</td>
+            <td>पार्टी में घुस जाना</td>
+            <td>crashed the party</td>
+            <td>crashed the party</td>
+        </tr>
+        <tr>
+            <td>audit rate</td>
+            <td>लेखा जोखा करना</td>
+            <td>audited rate</td>
+            <td>audited rate</td>
+        </tr>
+        <tr>
+            <td>give bribe</td>
+            <td>रिश्वत देना</td>
+            <td>gave bribe</td>
+            <td>given bribe</td>
+        </tr>
+        <tr>
+            <td>dog-ear the page</td>
+            <td>पन्ना मोड़ना</td>
+            <td>dog-eared the page</td>
+            <td>dog-eared the page</td>
+        </tr>
+        <tr>
+            <td>tolerate</td>
+            <td>सहन करना</td>
+            <td>tolerated</td>
+            <td>tolerated</td>
+        </tr>
+        <tr>
+            <td>do the window shopping</td>
+            <td>खिड़की दुकान देखना</td>
+            <td>did the window shopping</td>
+            <td>done the window shopping</td>
+        </tr>
+        <tr>
+            <td>cast the vote</td>
+            <td>वोट डालना</td>
+            <td>cast the vote</td>
+            <td>cast the vote</td>
+        </tr>
+        <tr>
+            <td>catch red handed</td>
+            <td>रंगे हाथों पकड़ना</td>
+            <td>caught red handed</td>
+            <td>caught red handed</td>
+        </tr>
+        <tr>
+            <td>go at</td>
+            <td>हमला करना</td>
+            <td>went at</td>
+            <td>gone at</td>
+        </tr>
+        <tr>
+            <td>go by</td>
+            <td>गुजर जाना</td>
+            <td>went by</td>
+            <td>gone by</td>
+        </tr>
+        <tr>
+            <td>get at</td>
+            <td>पहुंचना</td>
+            <td>got at</td>
+            <td>got at</td>
+        </tr>
+        <tr>
+            <td>economise</td>
+            <td>किफायत करना</td>
+            <td>economised</td>
+            <td>economised</td>
+        </tr>
+        <tr>
+            <td>yell</td>
+            <td>चिल्लाना</td>
+            <td>yelled</td>
+            <td>yelled</td>
+        </tr>
+        <tr>
+            <td>molest</td>
+            <td>छेड़छाड़ करना</td>
+            <td>molested</td>
+            <td>molested</td>
+        </tr>
+        <tr>
+            <td>atone</td>
+            <td>प्रायश्चित करना</td>
+            <td>atoned</td>
+            <td>atoned</td>
+        </tr>
+        <tr>
+            <td>meditate</td>
+            <td>ध्यान करना</td>
+            <td>meditated</td>
+            <td>meditated</td>
+        </tr>
+        <tr>
+            <td>perk up</td>
+            <td>खुश हो जाना</td>
+            <td>perked up</td>
+            <td>perked up</td>
+        </tr>
+        <tr>
+            <td>poke nose</td>
+            <td>दखल देना</td>
+            <td>poked nose</td>
+            <td>poked nose</td>
+        </tr>
+        <tr>
+            <td>slump</td>
+            <td>गिर जाना</td>
+            <td>slumped</td>
+            <td>slumped</td>
+        </tr>
+        <tr>
+            <td>memorize</td>
+            <td>याद करना</td>
+            <td>memorized</td>
+            <td>memorized</td>
+        </tr>
+        <tr>
+            <td>squeeze the lemon</td>
+            <td>नींबू निचोड़ना</td>
+            <td>squeezed the lemon</td>
+            <td>squeezed the lemon</td>
+        </tr>
+        <tr>
+            <td>churn the milk</td>
+            <td>दूध मथना</td>
+            <td>churned the milk</td>
+            <td>churned the milk</td>
+        </tr>
+        <tr>
+            <td>face oath</td>
+            <td>शपथ लेना</td>
+            <td>faced oath</td>
+            <td>faced oath</td>
+        </tr>
+        <tr>
+            <td>frisk someone</td>
+            <td>किसी की तलाशी लेना</td>
+            <td>frisked someone</td>
+            <td>frisked someone</td>
+        </tr>
+        <tr>
+            <td>mock</td>
+            <td>मजाक उड़ाना</td>
+            <td>mocked</td>
+            <td>mocked</td>
+        </tr>
+        <tr>
+            <td>let down</td>
+            <td>निराश करना</td>
+            <td>let down</td>
+            <td>let down</td>
+        </tr>
+        <tr>
+            <td>invade</td>
+            <td>आक्रमण करना</td>
+            <td>invaded</td>
+            <td>invaded</td>
+        </tr>
+        <tr>
+            <td>go on & on</td>
+            <td>लगातार बोलते रहना</td>
+            <td>went on & on</td>
+            <td>gone on & on</td>
+        </tr>
+        <tr>
+            <td>snore</td>
+            <td>खर्राटे लेना</td>
+            <td>snored</td>
+            <td>snored</td>
+        </tr>
+        <tr>
+            <td>forbid</td>
+            <td>मना करना</td>
+            <td>forbade</td>
+            <td>forbidden</td>
+        </tr>
+        <tr>
+            <td>make crispy dosa</td>
+            <td>कुरकुरा डोसा बनाना</td>
+            <td>made crispy dosa</td>
+            <td>made crispy dosa</td>
+        </tr>
+        <tr>
+            <td>pelt the stones</td>
+            <td>पत्थर फेंकना</td>
+            <td>pelted the stones</td>
+            <td>pelted the stones</td>
+        </tr>
+        <tr>
+            <td>shirk</td>
+            <td>काम से जी चुराना</td>
+            <td>shirked</td>
+            <td>shirked</td>
+        </tr>
+        <tr>
+            <td>get shirty</td>
+            <td>गुस्सा हो जाना</td>
+            <td>got shirty</td>
+            <td>got shirty</td>
+        </tr>
+        <tr>
+            <td>suffer from vertigo</td>
+            <td>चक्कर आना</td>
+            <td>suffered from vertigo</td>
+            <td>suffered from vertigo</td>
+        </tr>
+        <tr>
+            <td>worship an idol</td>
+            <td>मूर्ति पूजना</td>
+            <td>worshipped an idol</td>
+            <td>worshipped an idol</td>
+        </tr>
+        <tr>
+            <td>berate someone</td>
+            <td>किसी को डांटना</td>
+            <td>berated someone</td>
+            <td>berated someone</td>
+        </tr>
+        <tr>
+            <td>take risk</td>
+            <td>जोखिम लेना</td>
+            <td>took risk</td>
+            <td>taken risk</td>
+        </tr>
+        <tr>
+            <td>give a big applause</td>
+            <td>जोरदार ताली बजाना</td>
+            <td>gave a big applause</td>
+            <td>given a big applause</td>
+        </tr>
+
+        <tr>
             <td>elaborate</td>
             <td>विस्तार से समझाना, विस्तार करना</td>
             <td>elaborated</td>
             <td>elaborated</td>
-         </tr>
+        </tr>
         <tr>
             <td>nail</td>
             <td>शानदार तरीके से</td>
@@ -993,39 +1605,40 @@
             <td>null</td>
             <td>null</td>
         </tr>
-  </table>
+    </table>
 
-  <script>
-    function searchWords() {
-      const input = document.getElementById("search").value.toLowerCase();
-      const table = document.getElementById("vocabTable");
-      const rows = table.getElementsByTagName("tr");
-      let visibleCount = 0;
+    <script>
+        function searchWords() {
+            const input = document.getElementById("search").value.toLowerCase();
+            const table = document.getElementById("vocabTable");
+            const rows = table.getElementsByTagName("tr");
+            let visibleCount = 0;
 
-      for (let i = 1; i < rows.length; i++) {
-        const cells = rows[i].getElementsByTagName("td");
-        let match = false;
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName("td");
+                let match = false;
 
-        for (let j = 0; j < cells.length; j++) {
-          if (cells[j].innerText.toLowerCase().includes(input)) {
-            match = true;
-            break;
-          }
+                for (let j = 0; j < cells.length; j++) {
+                    if (cells[j].innerText.toLowerCase().includes(input)) {
+                        match = true;
+                        break;
+                    }
+                }
+
+                rows[i].style.display = match ? "" : "none";
+                if (match) visibleCount++;
+            }
+
+            document.getElementById("count").innerText = "Total Words: " + visibleCount;
         }
 
-        rows[i].style.display = match ? "" : "none";
-        if(match) visibleCount++;
-      }
-
-      document.getElementById("count").innerText = "Total Words: " + visibleCount;
-    }
-
-    // Initialize word count on page load
-    window.onload = () => {
-      const rows = document.getElementById("vocabTable").getElementsByTagName("tr");
-      document.getElementById("count").innerText = "Total Words: " + (rows.length - 1);
-    }
-  </script>
+        // Initialize word count on page load
+        window.onload = () => {
+            const rows = document.getElementById("vocabTable").getElementsByTagName("tr");
+            document.getElementById("count").innerText = "Total Words: " + (rows.length - 1);
+        }
+    </script>
 
 </body>
+
 </html>
