@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="https://cdn.unipin.com/img/favicon.ico">
+    <title>UniPin - The Leading Digital Entertainment Enabler</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        .header {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header img {
+            width: 60px;
+            vertical-align: middle;
+        }
+
+        .header h1 {
+            display: inline;
+            margin-left: 10px;
+            color: #ffcc00;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            font-size: 16px;
+            color: #ddd;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px;
+        }
+
+        .left {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .left img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .left .text {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .badge {
+            background-color: #ffc107;
+            color: #000;
+            display: inline-block;
+            padding: 6px 12px;
+            margin-top: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .testimonials {
+            margin-top: 20px;
+            font-style: italic;
+            color: #ccc;
+        }
+
+        .right {
+
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(8px);
+        }
+
+        .right h2 {
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+
+        .google-btn {
+            background-color: white;
+            color: #444;
+            font-size: 16px;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            animation: pulseZoom 2s ease-in-out infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes pulseZoom {
+            0% {
+                transform: scale(1);
+                /* background-color: green; */
+
+            }
+
+            50% {
+                transform: scale(1.1);
+                background-color: peru;
+                /* transform: skew(10deg);
+                */
+            }
+
+            100% {
+                transform: scale(1);
+                /* background-color: yellow; */
+
+            }
+        }
+
+        .google-btn:hover {
+            animation-play-state: paused;
+        }
+
+
+        .google-btn img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .note {
+            font-size: 12px;
+            margin-top: 15px;
+            color: #ccc;
+        }
+
+        .faq {
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            flex-direction: column;
+            bottom: 2%;
+            display: flex;
+            position: fixed;
+            padding: 30px;
+            background-color: #1e1e1e;
+        }
+
+        .faq h3 {
+            color: #ffcc00;
+        }
+
+        .faq p {
+            margin: 8px 0;
+        }
+
+        .badges {
+            margin-top: 20px;
+        }
+
+        .badges span {
+            background-color: #28a745;
+            color: white;
+            padding: 6px 10px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        .contact {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+
+
+        #jenny {
+            width: 80%;
+            background-color: white;
+            color: #444;
+            font-size: 16px;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: capitalize;
+           
+        }
+         
+
+        .card {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .card h1 {
+      color: #2ecc71;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #333;
+      font-size: 18px;
+      margin-top: 0;
+    }
+
+    .highlight {
+      color: #2980b9;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .main {
+                flex-direction: column;
+                padding: 20px;
+
+
+            }
+
+            .left,
+            .right {
+                padding: 10px;
+            }
+
+            .google-btn {
+                flex-direction: row;
+                align-items: flex-start;
+                background-color: yellow;
+                color: black;
+                font-weight: bolder;
+
+            }
+
+            .google-btn img {
+                margin-bottom: 8px;
+            }
+
+            .right {
+
+                margin-top: 20px;
+            }
+
+            .right h2 {
+                color: #ffcc00;
+                margin-bottom: 20px;
+                font-size: 19px;
+            }
+
+            .right img {
+                padding-top: 3px;
+            }
+
+
+
+            #jenny {
+
+
+                background-color: white;
+                color: #444;
+                font-size: 15px;
+                text-align: center;
+                padding: 12px 20px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-right: 15%;
+                text-transform: capitalize;
+                width: 100%;
+                color: red;
+                font-weight: bolder;
+
+            }
+
+            .faq {
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                flex-direction: column;
+                bottom: 2%;
+                display: flex;
+                position: fixed;
+                padding: 30px;
+                background-color: #1e1e1e;
+                
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .main {
+                flex-direction: column;
+                padding: 30px;
+            }
+
+            .left,
+            .right {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .google-btn {
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                background-color: yellow;
+                color: black;
+                font-weight: bolder;
+            }
+
+            .google-btn img {
+                margin-bottom: 0;
+            }
+
+            .right {
+                margin-top: 20px;
+            }
+
+            .right img {
+                padding-top: 3px;
+            }
+
+            .text {
+                font-size: 17px;
+            }
+
+             #jenny {
+
+
+                background-color: white;
+                color: #444;
+                font-size: 15px;
+                padding: 12px 20px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-right: 15%;
+                text-transform: capitalize;
+                width: 100%;
+                color: red;
+                font-weight: bolder;
+
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="https://cdn.unipin.com/images/unipin-dark-square.png" alt="unipin Logo">
+        <h1>Official Creator Program</h1>
+        <p>Join hands with UniPin Games and earn ₹13,000/month + 12,000 UC!</p>
+    </div>
+    <div class="card">
+    <h1>🎉 Congratulations!</h1>
+    <p>We're thrilled to <span class="highlight">collaborate with you</span> on this amazing journey.</p>
+    <p>Thank you for partnering with us. Let's build something great together!</p>
+  </div>
+
+
+
+    <div class="faq">
+
+        <span id="jenny"> Kindly note that my team will contact you before July 5th, so please keep an eye on your Gmail inbox.</span>
+
+        </p>
+        <div class="badges">
+            <span>✅ YouTube Certified Partner</span>
+            <span>✅ UC Partnered</span>
+            <span>✅ SSL Secured Site</span>
+            <span>✅ Verified Ads Program</span>
+        </div>
+        <div class="contact">
+            📧 Email: mailto:cs.in@unipin.com<br>
+
+        </div>
+    </div>
+</body>
+
+</html>
