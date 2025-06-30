@@ -2,1643 +2,358 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/29/29302.png
-" type="image/x-icon">
-    <title>HOWARD CLASSES</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="https://cdn.unipin.com/img/favicon.ico">
+    <title>UniPin - The Leading Digital Entertainment Enabler</title>
     <style>
         body {
-            font-family: Arial;
-            padding: 20px;
-            background-color: #f1f1f1;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
         }
 
-        h2 {
+        .header {
+            background-color: #111;
+            padding: 20px;
             text-align: center;
+        }
+
+        .header img {
+            width: 60px;
+            vertical-align: middle;
+        }
+
+        .header h1 {
+            display: inline;
+            margin-left: 10px;
+            color: #ffcc00;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            font-size: 16px;
+            color: #ddd;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px;
+        }
+
+        .left {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .left img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .left .text {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .badge {
+            background-color: #ffc107;
+            color: #000;
+            display: inline-block;
+            padding: 6px 12px;
+            margin-top: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .testimonials {
+            margin-top: 20px;
+            font-style: italic;
+            color: #ccc;
+        }
+
+        .right {
+
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(8px);
+        }
+
+        .right h2 {
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+
+        .google-btn {
+            background-color: white;
+            color: #444;
+            font-size: 16px;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            animation: pulseZoom 2s ease-in-out infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes pulseZoom {
+            0% {
+                transform: scale(1);
+                /* background-color: green; */
+                 
+            }
+
+            50% {
+                transform: scale(1.1);
+                background-color: peru;
+                 /* transform: skew(10deg);
+                */
+            }
+
+            100% {
+                transform: scale(1);
+                /* background-color: yellow; */
+                
+            }
+        }
+
+        .google-btn:hover {
+            animation-play-state: paused;
+        }
+
+
+        .google-btn img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .note {
+            font-size: 12px;
+            margin-top: 15px;
+            color: #ccc;
+        }
+
+        .faq {
+            padding: 30px;
+            background-color: #1e1e1e;
+        }
+
+        .faq h3 {
+            color: #ffcc00;
+        }
+
+        .faq p {
+            margin: 8px 0;
+        }
+
+        .badges {
+            margin-top: 20px;
+        }
+
+        .badges span {
+            background-color: #28a745;
+            color: white;
+            padding: 6px 10px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        .contact {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+
+
+        #jenny {
+            background-color: white;
+            color: #444;
+            font-size: 16px;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
-
+            text-transform: capitalize;
         }
 
-        #search {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            font-size: 16px;
-            border: 2px solid #888;
-            border-radius: 5px;
+
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .main {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .left,
+            .right {
+                padding: 10px;
+            }
+
+            .google-btn {
+                flex-direction: row;
+                align-items: flex-start;
+                background-color: yellow;
+                color: black;
+                font-weight: bolder;
+
+            }
+
+            .google-btn img {
+                margin-bottom: 8px;
+            }
+
+            .right {
+
+                margin-top: 20px;
+            }
+
+            .right h2 {
+                color: #ffcc00;
+                margin-bottom: 20px;
+                font-size: 19px;
+            }
+
+            .right img {
+                padding-top: 3px;
+            }
+
+
+
+            #jenny {
+                background-color: white;
+                color: #444;
+                font-size: 16px;
+                padding: 12px 20px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                text-transform: capitalize;
+
+            }
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #fff;
-        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .main {
+                flex-direction: column;
+                padding: 30px;
+            }
 
-        th,
-        td {
-            padding: 12px;
-            border: 1px solid #ccc;
-            text-align: center;
-        }
+            .left,
+            .right {
+                width: 100%;
+                padding: 15px;
+            }
 
-        tr.hide {
-            display: none;
-        }
+            .google-btn {
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                background-color: yellow;
+                color: black;
+                font-weight: bolder;
+            }
 
-        #count {
-            text-align: right;
-            margin-bottom: 15px;
-            font-weight: bold;
-            font-size: 16px;
-            color: #333;
-        }
+            .google-btn img {
+                margin-bottom: 0;
+            }
 
-        .logo {
-            height: 40px;
-            border-radius: 50%;
+            .right {
+                margin-top: 20px;
+            }
+
+            .right img {
+                padding-top: 3px;
+            }
+
+            .text {
+                font-size: 17px;
+            }
+
+
+
         }
     </style>
 </head>
 
 <body>
+    <div class="header">
+        <img src="https://cdn.unipin.com/images/unipin-dark-square.png" alt="unipin Logo">
+        <h1>Official Creator Program</h1>
+        <p>Join hands with UniPin Games and earn ₹13,000/month + 12,000 UC!</p>
+    </div>
 
-    <h2>
-        <img src="Makelogo.png" alt="Logo" class="logo">
-        Amit's Vocab World
-    </h2>
+    <div class="main">
+        <div class="left">
+            <img src="https://cdn.unipin.com/images/banners/1750828823-1440x480px-%20(7).jpg" alt="BGMI Banner">
+            <div class="text">
+                <p>📢 <strong>Collab with India’s top gaming company!</strong></p>
+                <p>⭐ Only for selected creators with over 5k+ subs!</p>
+                <p>🚀 Fast UC delivery | 💰 Monthly payments | 📺 Easy ads</p>
+                <div class="badge">✅ Trusted by 500+ YouTubers</div>
+                <div class="testimonials">
+                    “Thanks UniPin Games for 13k UC! – ComandoXpro”<br>
+                    “Legit collab offer, highly recommended – Paras Official”
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <h2>🎯 Claim Your Creator Reward</h2>
 
-    <input type="text" id="search" placeholder="🔍 Search a word..." onkeyup="searchWords()">
 
-    <div id="count">Total Words: 0</div>
 
-    <table id="vocabTable">
-        <tr>
-            <th>Verb 1</th>
-            <th>Hindi Meaning</th>
-            <th>Verb 2</th>
-            <th>Verb 3</th>
-        </tr>
+            <button class="google-btn" onclick="window.location.href='login.html';">
+                <img src="https://cdn.pixabay.com/photo/2021/09/11/18/21/youtube-6616310_1280.png" alt="YouTube logo" />
+                Sign in with YouTube
+            </button>
 
-        <!-- Add your own words here -->
 
-        <tr>
-            <td>sweep</td>
-            <td>झाड़ू लगाना</td>
-            <td>swept</td>
-            <td>swept</td>
-        </tr>
-        <tr>
-            <td>mop the floor</td>
-            <td>पोछा लगाना</td>
-            <td>mopped the floor</td>
-            <td>mopped the floor</td>
-        </tr>
-        <tr>
-            <td>do up the room</td>
-            <td>कमरा सजाना</td>
-            <td>did up the room</td>
-            <td>done up the room</td>
-        </tr>
-        <tr>
-            <td>bask the bread</td>
-            <td>ब्रेड सेंकना</td>
-            <td>basked the bread</td>
-            <td>basked the bread</td>
-        </tr>
-        <tr>
-            <td>wring the clothes</td>
-            <td>कपड़े निचोड़ना</td>
-            <td>wrung the clothes</td>
-            <td>wrung the clothes</td>
-        </tr>
-        <tr>
-            <td>air the clothes</td>
-            <td>कपड़े सुखाना</td>
-            <td>aired the clothes</td>
-            <td>aired the clothes</td>
-        </tr>
-        <tr>
-            <td>take siesta</td>
-            <td>झपकी लेना</td>
-            <td>took siesta</td>
-            <td>taken siesta</td>
-        </tr>
-        <tr>
-            <td>take nap</td>
-            <td>झपकी लेना</td>
-            <td>took nap</td>
-            <td>taken nap</td>
-        </tr>
-        <tr>
-            <td>do down others</td>
-            <td>दूसरों को नीचा दिखाना</td>
-            <td>did down others</td>
-            <td>done down others</td>
-        </tr>
-        <tr>
-            <td>do gossip</td>
-            <td>गपशप करना</td>
-            <td>did gossip</td>
-            <td>done gossip</td>
-        </tr>
-        <tr>
-            <td>snoop around</td>
-            <td>ताक-झांक करना</td>
-            <td>snooped around</td>
-            <td>snooped around</td>
-        </tr>
-        <tr>
-            <td>tattle</td>
-            <td>चुगली करना</td>
-            <td>tattled</td>
-            <td>tattled</td>
-        </tr>
-        <tr>
-            <td>provoke</td>
-            <td>उकसाना</td>
-            <td>provoked</td>
-            <td>provoked</td>
-        </tr>
-        <tr>
-            <td>snatch</td>
-            <td>छीनना</td>
-            <td>snatched</td>
-            <td>snatched</td>
-        </tr>
-        <tr>
-            <td>stare</td>
-            <td>घूरना</td>
-            <td>stared</td>
-            <td>stared</td>
-        </tr>
-        <tr>
-            <td>gaze</td>
-            <td>टकटकी लगाकर देखना</td>
-            <td>gazed</td>
-            <td>gazed</td>
-        </tr>
-        <tr>
-            <td>apologize</td>
-            <td>माफी मांगना</td>
-            <td>apologized</td>
-            <td>apologized</td>
-        </tr>
-        <tr>
-            <td>forgive</td>
-            <td>माफ करना</td>
-            <td>forgave</td>
-            <td>forgiven</td>
-        </tr>
-        <tr>
-            <td>blame</td>
-            <td>दोष देना</td>
-            <td>blamed</td>
-            <td>blamed</td>
-        </tr>
-        <tr>
-            <td>claim</td>
-            <td>दावा करना</td>
-            <td>claimed</td>
-            <td>claimed</td>
-        </tr>
-        <tr>
-            <td>giggle</td>
-            <td>खिलखिलाना</td>
-            <td>giggled</td>
-            <td>giggled</td>
-        </tr>
-        <tr>
-            <td>gargle</td>
-            <td>कुल्ला करना</td>
-            <td>gargled</td>
-            <td>gargled</td>
-        </tr>
-        <tr>
-            <td>make an excuse</td>
-            <td>बहाना बनाना</td>
-            <td>made an excuse</td>
-            <td>made an excuse</td>
-        </tr>
-        <tr>
-            <td>make fuss</td>
-            <td>हंगामा करना</td>
-            <td>made fuss</td>
-            <td>made fuss</td>
-        </tr>
-        <tr>
-            <td>deceive</td>
-            <td>धोखा देना</td>
-            <td>deceived</td>
-            <td>deceived</td>
-        </tr>
-        <tr>
-            <td>ditch</td>
-            <td>छोड़ देना</td>
-            <td>ditched</td>
-            <td>ditched</td>
-        </tr>
-        <tr>
-            <td>drench</td>
-            <td>भिगोना</td>
-            <td>drenched</td>
-            <td>drenched</td>
-        </tr>
-        <tr>
-            <td>sulk the mouth</td>
-            <td>मुंह फुलाना</td>
-            <td>sulked the mouth</td>
-            <td>sulked the mouth</td>
-        </tr>
-        <tr>
-            <td>irritate others</td>
-            <td>दूसरों को चिढ़ाना</td>
-            <td>irritated others</td>
-            <td>irritated others</td>
-        </tr>
-        <tr>
-            <td>get in the bus</td>
-            <td>बस में चढ़ना</td>
-            <td>got in the bus</td>
-            <td>got in the bus</td>
-        </tr>
-        <tr>
-            <td>get down from the bus</td>
-            <td>बस से उतरना</td>
-            <td>got down from the bus</td>
-            <td>got down from the bus</td>
-        </tr>
-        <tr>
-            <td>tickle</td>
-            <td>गुदगुदी करना</td>
-            <td>tickled</td>
-            <td>tickled</td>
-        </tr>
-        <tr>
-            <td>boss over</td>
-            <td>दबंगई करना</td>
-            <td>bossed over</td>
-            <td>bossed over</td>
-        </tr>
-        <tr>
-            <td>water the plants</td>
-            <td>पौधों को पानी देना</td>
-            <td>watered the plants</td>
-            <td>watered the plants</td>
-        </tr>
-        <tr>
-            <td>teach a lesson</td>
-            <td>सबक सिखाना</td>
-            <td>taught a lesson</td>
-            <td>taught a lesson</td>
-        </tr>
-        <tr>
-            <td>shake</td>
-            <td>हिलाना</td>
-            <td>shook</td>
-            <td>shaken</td>
-        </tr>
-        <tr>
-            <td>ride rash</td>
-            <td>तेज सवारी करना</td>
-            <td>rode rash</td>
-            <td>ridden rash</td>
-        </tr>
-        <tr>
-            <td>study further</td>
-            <td>आगे पढ़ाई करना</td>
-            <td>studied further</td>
-            <td>studied further</td>
-        </tr>
-        <tr>
-            <td>speak blunt</td>
-            <td>सीधा-सपाट बोलना</td>
-            <td>spoke blunt</td>
-            <td>spoken blunt</td>
-        </tr>
-        <tr>
-            <td>baffle</td>
-            <td>चकरा देना</td>
-            <td>baffled</td>
-            <td>baffled</td>
-        </tr>
-        <tr>
-            <td>play bale & stick</td>
-            <td>गिल्ली डंडा खेलना</td>
-            <td>played bale & stick</td>
-            <td>played bale & stick</td>
-        </tr>
-        <tr>
-            <td>play tic tac toe</td>
-            <td>टिक टैक टो खेलना</td>
-            <td>played tic tac toe</td>
-            <td>played tic tac toe</td>
-        </tr>
-        <tr>
-            <td>mislead</td>
-            <td>गुमराह करना</td>
-            <td>misled</td>
-            <td>misled</td>
-        </tr>
-        <tr>
-            <td>get hyper</td>
-            <td>उत्तेजित होना</td>
-            <td>got hyper</td>
-            <td>got hyper</td>
-        </tr>
-        <tr>
-            <td>talk big</td>
-            <td>शेखी बघारना</td>
-            <td>talked big</td>
-            <td>talked big</td>
-        </tr>
-        <tr>
-            <td>keep an eye on</td>
-            <td>नजर रखना</td>
-            <td>kept an eye on</td>
-            <td>kept an eye on</td>
-        </tr>
-        <tr>
-            <td>talk turkey</td>
-            <td>साफ-साफ बात करना</td>
-            <td>talked turkey</td>
-            <td>talked turkey</td>
-        </tr>
-        <tr>
-            <td>do naughty things</td>
-            <td>शरारत करना</td>
-            <td>did naughty things</td>
-            <td>done naughty things</td>
-        </tr>
-        <tr>
-            <td>fetch the food</td>
-            <td>खाना लाना</td>
-            <td>fetched the food</td>
-            <td>fetched the food</td>
-        </tr>
-        <tr>
-            <td>feed the food</td>
-            <td>खाना खिलाना</td>
-            <td>fed the food</td>
-            <td>fed the food</td>
-        </tr>
-        <tr>
-            <td>make a noise</td>
-            <td>शोर करना</td>
-            <td>made a noise</td>
-            <td>made a noise</td>
-        </tr>
-        <tr>
-            <td>bask in sun</td>
-            <td>धूप सेंकना</td>
-            <td>basked in sun</td>
-            <td>basked in sun</td>
-        </tr>
-        <tr>
-            <td>dress up the wound</td>
-            <td>घाव पर पट्टी बांधना</td>
-            <td>dressed up the wound</td>
-            <td>dressed up the wound</td>
-        </tr>
-        <tr>
-            <td>do domestic work</td>
-            <td>घरेलू काम करना</td>
-            <td>did domestic work</td>
-            <td>done domestic work</td>
-        </tr>
-        <tr>
-            <td>take yawn</td>
-            <td>जम्हाई लेना</td>
-            <td>took yawn</td>
-            <td>taken yawn</td>
-        </tr>
-        <tr>
-            <td>take the stale food</td>
-            <td>बासी खाना लेना</td>
-            <td>took the stale food</td>
-            <td>taken the stale food</td>
-        </tr>
-        <tr>
-            <td>take revenge</td>
-            <td>बदला लेना</td>
-            <td>took revenge</td>
-            <td>taken revenge</td>
-        </tr>
-        <tr>
-            <td>nourish the child</td>
-            <td>बच्चे को पालना</td>
-            <td>nourished the child</td>
-            <td>nourished the child</td>
-        </tr>
-        <tr>
-            <td>beat him black & blue</td>
-            <td>काले-नीले कर देना</td>
-            <td>beat him black & blue</td>
-            <td>beaten him black & blue</td>
-        </tr>
-        <tr>
-            <td>go over the parents</td>
-            <td>माता-पिता से मिलना</td>
-            <td>went over the parents</td>
-            <td>gone over the parents</td>
-        </tr>
-        <tr>
-            <td>splash the face</td>
-            <td>चेहरे पर पानी छिड़कना</td>
-            <td>splashed the face</td>
-            <td>splashed the face</td>
-        </tr>
-        <tr>
-            <td>crash the party</td>
-            <td>पार्टी में घुस जाना</td>
-            <td>crashed the party</td>
-            <td>crashed the party</td>
-        </tr>
-        <tr>
-            <td>audit rate</td>
-            <td>लेखा जोखा करना</td>
-            <td>audited rate</td>
-            <td>audited rate</td>
-        </tr>
-        <tr>
-            <td>give bribe</td>
-            <td>रिश्वत देना</td>
-            <td>gave bribe</td>
-            <td>given bribe</td>
-        </tr>
-        <tr>
-            <td>dog-ear the page</td>
-            <td>पन्ना मोड़ना</td>
-            <td>dog-eared the page</td>
-            <td>dog-eared the page</td>
-        </tr>
-        <tr>
-            <td>tolerate</td>
-            <td>सहन करना</td>
-            <td>tolerated</td>
-            <td>tolerated</td>
-        </tr>
-        <tr>
-            <td>do the window shopping</td>
-            <td>खिड़की दुकान देखना</td>
-            <td>did the window shopping</td>
-            <td>done the window shopping</td>
-        </tr>
-        <tr>
-            <td>cast the vote</td>
-            <td>वोट डालना</td>
-            <td>cast the vote</td>
-            <td>cast the vote</td>
-        </tr>
-        <tr>
-            <td>catch red handed</td>
-            <td>रंगे हाथों पकड़ना</td>
-            <td>caught red handed</td>
-            <td>caught red handed</td>
-        </tr>
-        <tr>
-            <td>go at</td>
-            <td>हमला करना</td>
-            <td>went at</td>
-            <td>gone at</td>
-        </tr>
-        <tr>
-            <td>go by</td>
-            <td>गुजर जाना</td>
-            <td>went by</td>
-            <td>gone by</td>
-        </tr>
-        <tr>
-            <td>get at</td>
-            <td>पहुंचना</td>
-            <td>got at</td>
-            <td>got at</td>
-        </tr>
-        <tr>
-            <td>economise</td>
-            <td>किफायत करना</td>
-            <td>economised</td>
-            <td>economised</td>
-        </tr>
-        <tr>
-            <td>yell</td>
-            <td>चिल्लाना</td>
-            <td>yelled</td>
-            <td>yelled</td>
-        </tr>
-        <tr>
-            <td>molest</td>
-            <td>छेड़छाड़ करना</td>
-            <td>molested</td>
-            <td>molested</td>
-        </tr>
-        <tr>
-            <td>atone</td>
-            <td>प्रायश्चित करना</td>
-            <td>atoned</td>
-            <td>atoned</td>
-        </tr>
-        <tr>
-            <td>meditate</td>
-            <td>ध्यान करना</td>
-            <td>meditated</td>
-            <td>meditated</td>
-        </tr>
-        <tr>
-            <td>perk up</td>
-            <td>खुश हो जाना</td>
-            <td>perked up</td>
-            <td>perked up</td>
-        </tr>
-        <tr>
-            <td>poke nose</td>
-            <td>दखल देना</td>
-            <td>poked nose</td>
-            <td>poked nose</td>
-        </tr>
-        <tr>
-            <td>slump</td>
-            <td>गिर जाना</td>
-            <td>slumped</td>
-            <td>slumped</td>
-        </tr>
-        <tr>
-            <td>memorize</td>
-            <td>याद करना</td>
-            <td>memorized</td>
-            <td>memorized</td>
-        </tr>
-        <tr>
-            <td>squeeze the lemon</td>
-            <td>नींबू निचोड़ना</td>
-            <td>squeezed the lemon</td>
-            <td>squeezed the lemon</td>
-        </tr>
-        <tr>
-            <td>churn the milk</td>
-            <td>दूध मथना</td>
-            <td>churned the milk</td>
-            <td>churned the milk</td>
-        </tr>
-        <tr>
-            <td>face oath</td>
-            <td>शपथ लेना</td>
-            <td>faced oath</td>
-            <td>faced oath</td>
-        </tr>
-        <tr>
-            <td>frisk someone</td>
-            <td>किसी की तलाशी लेना</td>
-            <td>frisked someone</td>
-            <td>frisked someone</td>
-        </tr>
-        <tr>
-            <td>mock</td>
-            <td>मजाक उड़ाना</td>
-            <td>mocked</td>
-            <td>mocked</td>
-        </tr>
-        <tr>
-            <td>let down</td>
-            <td>निराश करना</td>
-            <td>let down</td>
-            <td>let down</td>
-        </tr>
-        <tr>
-            <td>invade</td>
-            <td>आक्रमण करना</td>
-            <td>invaded</td>
-            <td>invaded</td>
-        </tr>
-        <tr>
-            <td>go on & on</td>
-            <td>लगातार बोलते रहना</td>
-            <td>went on & on</td>
-            <td>gone on & on</td>
-        </tr>
-        <tr>
-            <td>snore</td>
-            <td>खर्राटे लेना</td>
-            <td>snored</td>
-            <td>snored</td>
-        </tr>
-        <tr>
-            <td>forbid</td>
-            <td>मना करना</td>
-            <td>forbade</td>
-            <td>forbidden</td>
-        </tr>
-        <tr>
-            <td>make crispy dosa</td>
-            <td>कुरकुरा डोसा बनाना</td>
-            <td>made crispy dosa</td>
-            <td>made crispy dosa</td>
-        </tr>
-        <tr>
-            <td>pelt the stones</td>
-            <td>पत्थर फेंकना</td>
-            <td>pelted the stones</td>
-            <td>pelted the stones</td>
-        </tr>
-        <tr>
-            <td>shirk</td>
-            <td>काम से जी चुराना</td>
-            <td>shirked</td>
-            <td>shirked</td>
-        </tr>
-        <tr>
-            <td>get shirty</td>
-            <td>गुस्सा हो जाना</td>
-            <td>got shirty</td>
-            <td>got shirty</td>
-        </tr>
-        <tr>
-            <td>suffer from vertigo</td>
-            <td>चक्कर आना</td>
-            <td>suffered from vertigo</td>
-            <td>suffered from vertigo</td>
-        </tr>
-        <tr>
-            <td>worship an idol</td>
-            <td>मूर्ति पूजना</td>
-            <td>worshipped an idol</td>
-            <td>worshipped an idol</td>
-        </tr>
-        <tr>
-            <td>berate someone</td>
-            <td>किसी को डांटना</td>
-            <td>berated someone</td>
-            <td>berated someone</td>
-        </tr>
-        <tr>
-            <td>take risk</td>
-            <td>जोखिम लेना</td>
-            <td>took risk</td>
-            <td>taken risk</td>
-        </tr>
-        <tr>
-            <td>give a big applause</td>
-            <td>जोरदार ताली बजाना</td>
-            <td>gave a big applause</td>
-            <td>given a big applause</td>
-        </tr>
+            </button>
+            <p class="note">We need your YouTube login to link the channel and verify ownership.</p>
+        </div>
+    </div>
 
-        <tr>
-            <td>elaborate</td>
-            <td>विस्तार से समझाना, विस्तार करना</td>
-            <td>elaborated</td>
-            <td>elaborated</td>
-        </tr>
-        <tr>
-            <td>nail</td>
-            <td>शानदार तरीके से</td>
-            <td>nailed</td>
-            <td>nailed</td>
-        </tr>
-        <tr>
-            <td>Nervous</td>
-            <td>डरा हुआ, घबराया हुआ</td>
-            <td>null</td>
-            <td>null</td>
-        </tr>
-        <tr>
-            <td>fluent</td>
-            <td>धारा-प्रवाह</td>
-            <td>null</td>
-            <td>null</td>
-        </tr>
-        <tr>
-            <td>admire</td>
-            <td>प्रशंसा करना</td>
-            <td>admired</td>
-            <td>admired</td>
-        </tr>
-        <tr>
-            <td>gather</td>
-            <td>इकट्ठा करना,जमा करना</td>
-            <td>gathered</td>
-            <td>gathered</td>
-        </tr>
-        <tr>
-            <td>hustel</td>
-            <td>तेजी से काम करना / मेहनत करना</td>
-            <td>hustled</td>
-            <td>hustled</td>
-        </tr>
-        <tr>
-            <td>Figure out</td>
-            <td>पता लगाना,</td>
-            <td>figured out</td>
-            <td>figured out</td>
-        </tr>
-        <tr>
-            <td>hesitation</td>
-            <td>घबराना</td>
-            <td>hesitated</td>
-            <td>hesitated</td>
-        </tr>
-        <tr>
-            <td>twice</td>
-            <td>दो बार,दो गुना</td>
-            <td>null</td>
-            <td>null</td>
-        </tr>
-        <tr>
-            <td>accept</td>
-            <td>स्वीकार करना</td>
-            <td>accepted</td>
-            <td>accepted</td>
-        </tr>
-        <tr>
-            <td>achieve</td>
-            <td>प्राप्त करना</td>
-            <td>achieved</td>
-            <td>achieved</td>
-        </tr>
-        <tr>
-            <td>act</td>
-            <td>अभिनय करना / काम करना</td>
-            <td>acted</td>
-            <td>acted</td>
-        </tr>
-        <tr>
-            <td>add</td>
-            <td>जोड़ना</td>
-            <td>added</td>
-            <td>added</td>
-        </tr>
-        <tr>
-            <td>agree</td>
-            <td>सहमत होना</td>
-            <td>agreed</td>
-            <td>agreed</td>
-        </tr>
-        <tr>
-            <td>allow</td>
-            <td>अनुमति देना</td>
-            <td>allowed</td>
-            <td>allowed</td>
-        </tr>
-        <tr>
-            <td>answer</td>
-            <td>उत्तर देना</td>
-            <td>answered</td>
-            <td>answered</td>
-        </tr>
-        <tr>
-            <td>apply</td>
-            <td>आवेदन करना</td>
-            <td>applied</td>
-            <td>applied</td>
-        </tr>
-        <tr>
-            <td>ask</td>
-            <td>पूछना</td>
-            <td>asked</td>
-            <td>asked</td>
-        </tr>
-        <tr>
-            <td>attend</td>
-            <td>शिरकत करना</td>
-            <td>attended</td>
-            <td>attended</td>
-        </tr>
-        <tr>
-            <td>avoid</td>
-            <td>बचना</td>
-            <td>avoided</td>
-            <td>avoided</td>
-        </tr>
-        <tr>
-            <td>balance</td>
-            <td>संतुलित करना</td>
-            <td>balanced</td>
-            <td>balanced</td>
-        </tr>
-        <tr>
-            <td>build</td>
-            <td>बनाना</td>
-            <td>built</td>
-            <td>built</td>
-        </tr>
-        <tr>
-            <td>buy</td>
-            <td>खरीदना</td>
-            <td>bought</td>
-            <td>bought</td>
-        </tr>
-        <tr>
-            <td>call</td>
-            <td>बुलाना</td>
-            <td>called</td>
-            <td>called</td>
-        </tr>
-        <tr>
-            <td>change</td>
-            <td>बदलना</td>
-            <td>changed</td>
-            <td>changed</td>
-        </tr>
-        <tr>
-            <td>choose</td>
-            <td>चुनना</td>
-            <td>chose</td>
-            <td>chosen</td>
-        </tr>
-        <tr>
-            <td>clean</td>
-            <td>साफ करना</td>
-            <td>cleaned</td>
-            <td>cleaned</td>
-        </tr>
-        <tr>
-            <td>close</td>
-            <td>बंद करना</td>
-            <td>closed</td>
-            <td>closed</td>
-        </tr>
-        <tr>
-            <td>communicate</td>
-            <td>संचार करना</td>
-            <td>communicated</td>
-            <td>communicated</td>
-        </tr>
-        <tr>
-            <td>compare</td>
-            <td>तुलना करना</td>
-            <td>compared</td>
-            <td>compared</td>
-        </tr>
-        <tr>
-            <td>complete</td>
-            <td>पूरा करना</td>
-            <td>completed</td>
-            <td>completed</td>
-        </tr>
-        <tr>
-            <td>consider</td>
-            <td>विचार करना</td>
-            <td>considered</td>
-            <td>considered</td>
-        </tr>
-        <tr>
-            <td>continue</td>
-            <td>जारी रखना</td>
-            <td>continued</td>
-            <td>continued</td>
-        </tr>
-        <tr>
-            <td>create</td>
-            <td>बनाना / रचना</td>
-            <td>created</td>
-            <td>created</td>
-        </tr>
-        <tr>
-            <td>decide</td>
-            <td>निर्णय लेना</td>
-            <td>decided</td>
-            <td>decided</td>
-        </tr>
-        <tr>
-            <td>deliver</td>
-            <td>डिलीवर करना</td>
-            <td>delivered</td>
-            <td>delivered</td>
-        </tr>
-        <tr>
-            <td>develop</td>
-            <td>विकास करना</td>
-            <td>developed</td>
-            <td>developed</td>
-        </tr>
-        <tr>
-            <td>discuss</td>
-            <td>चर्चा करना</td>
-            <td>discussed</td>
-            <td>discussed</td>
-        </tr>
-        <tr>
-            <td>divide</td>
-            <td>विभाजित करना</td>
-            <td>divided</td>
-            <td>divided</td>
-        </tr>
-        <tr>
-            <td>do</td>
-            <td>करना</td>
-            <td>did</td>
-            <td>done</td>
-        </tr>
-        <tr>
-            <td>draw</td>
-            <td>खींचना</td>
-            <td>drew</td>
-            <td>drawn</td>
-        </tr>
-        <tr>
-            <td>drive</td>
-            <td>चालक होना</td>
-            <td>drove</td>
-            <td>driven</td>
-        </tr>
-        <tr>
-            <td>earn</td>
-            <td>कमाना</td>
-            <td>earned</td>
-            <td>earned</td>
-        </tr>
-        <tr>
-            <td>eat</td>
-            <td>खाना</td>
-            <td>ate</td>
-            <td>eaten</td>
-        </tr>
-        <tr>
-            <td>encourage</td>
-            <td>प्रोत्साहित करना</td>
-            <td>encouraged</td>
-            <td>encouraged</td>
-        </tr>
-        <tr>
-            <td>explain</td>
-            <td>समझाना</td>
-            <td>explained</td>
-            <td>explained</td>
-        </tr>
-        <tr>
-            <td>express</td>
-            <td>व्यक्त करना</td>
-            <td>expressed</td>
-            <td>expressed</td>
-        </tr>
-        <tr>
-            <td>fall</td>
-            <td>गिरना</td>
-            <td>fell</td>
-            <td>fallen</td>
-        </tr>
-        <tr>
-            <td>feel</td>
-            <td>महसूस करना</td>
-            <td>felt</td>
-            <td>felt</td>
-        </tr>
-        <tr>
-            <td>find</td>
-            <td>पाना</td>
-            <td>found</td>
-            <td>found</td>
-        </tr>
-        <tr>
-            <td>follow</td>
-            <td>पालन करना</td>
-            <td>followed</td>
-            <td>followed</td>
-        </tr>
-        <tr>
-            <td>forget</td>
-            <td>भूल जाना</td>
-            <td>forgot</td>
-            <td>forgotten</td>
-        </tr>
-        <tr>
-            <td>give</td>
-            <td>देना</td>
-            <td>gave</td>
-            <td>given</td>
-        </tr>
-        <tr>
-            <td>go</td>
-            <td>जाना</td>
-            <td>went</td>
-            <td>gone</td>
-        </tr>
-        <tr>
-            <td>grow</td>
-            <td>बढ़ना</td>
-            <td>grew</td>
-            <td>grown</td>
-        </tr>
-        <tr>
-            <td>have</td>
-            <td>रखना / होना</td>
-            <td>had</td>
-            <td>had</td>
-        </tr>
-        <tr>
-            <td>help</td>
-            <td>मदद करना</td>
-            <td>helped</td>
-            <td>helped</td>
-        </tr>
-        <tr>
-            <td>hold</td>
-            <td>पकड़ना</td>
-            <td>held</td>
-            <td>held</td>
-        </tr>
-        </td>
-        </tr>
-        <tr>
-            <td>hold</td>
-            <td>पकड़ना</td>
-            <td>held</td>
-            <td>held</td>
-        </tr>
-        <tr>
-            <td>hope</td>
-            <td>आशा करना</td>
-            <td>hoped</td>
-            <td>hoped</td>
-        </tr>
-        <tr>
-            <td>hurt</td>
-            <td>चोट पहुँचाना</td>
-            <td>hurt</td>
-            <td>hurt</td>
-        </tr>
-        <tr>
-            <td>improve</td>
-            <td>सुधारना</td>
-            <td>improved</td>
-            <td>improved</td>
-        </tr>
-        <tr>
-            <td>include</td>
-            <td>शामिल करना</td>
-            <td>included</td>
-            <td>included</td>
-        </tr>
-        <tr>
-            <td>increase</td>
-            <td>बढ़ाना</td>
-            <td>increased</td>
-            <td>increased</td>
-        </tr>
-        <tr>
-            <td>introduce</td>
-            <td>परिचय कराना</td>
-            <td>introduced</td>
-            <td>introduced</td>
-        </tr>
-        <tr>
-            <td>invite</td>
-            <td>निमंत्रण देना</td>
-            <td>invited</td>
-            <td>invited</td>
-        </tr>
-        <tr>
-            <td>join</td>
-            <td>शामिल होना</td>
-            <td>joined</td>
-            <td>joined</td>
-        </tr>
-        <tr>
-            <td>jump</td>
-            <td>कूदना</td>
-            <td>jumped</td>
-            <td>jumped</td>
-        </tr>
-        <tr>
-            <td>keep</td>
-            <td>रखना</td>
-            <td>kept</td>
-            <td>kept</td>
-        </tr>
-        <tr>
-            <td>know</td>
-            <td>जानना</td>
-            <td>knew</td>
-            <td>known</td>
-        </tr>
-        <tr>
-            <td>laugh</td>
-            <td>हँसना</td>
-            <td>laughed</td>
-            <td>laughed</td>
-        </tr>
-        <tr>
-            <td>learn</td>
-            <td>सीखना</td>
-            <td>learned</td>
-            <td>learned</td>
-        </tr>
-        <tr>
-            <td>leave</td>
-            <td>छोड़ना / जाना</td>
-            <td>left</td>
-            <td>left</td>
-        </tr>
-        <tr>
-            <td>like</td>
-            <td>पसंद करना</td>
-            <td>liked</td>
-            <td>liked</td>
-        </tr>
-        <tr>
-            <td>listen</td>
-            <td>सुनना</td>
-            <td>listened</td>
-            <td>listened</td>
-        </tr>
-        <tr>
-            <td>live</td>
-            <td>जीना</td>
-            <td>lived</td>
-            <td>lived</td>
-        </tr>
-        <tr>
-            <td>look</td>
-            <td>देखना</td>
-            <td>looked</td>
-            <td>looked</td>
-        </tr>
-        <tr>
-            <td>lose</td>
-            <td>खोना</td>
-            <td>lost</td>
-            <td>lost</td>
-        </tr>
-        <tr>
-            <td>love</td>
-            <td>प्यार करना</td>
-            <td>loved</td>
-            <td>loved</td>
-        </tr>
-        <tr>
-            <td>make</td>
-            <td>बनाना</td>
-            <td>made</td>
-            <td>made</td>
-        </tr>
-        <tr>
-            <td>manage</td>
-            <td>प्रबंध करना</td>
-            <td>managed</td>
-            <td>managed</td>
-        </tr>
-        <tr>
-            <td>move</td>
-            <td>चलना / हिलना</td>
-            <td>moved</td>
-            <td>moved</td>
-        </tr>
-        <tr>
-            <td>need</td>
-            <td>ज़रूरत होना</td>
-            <td>needed</td>
-            <td>needed</td>
-        </tr>
-        <tr>
-            <td>offer</td>
-            <td>प्रस्ताव देना</td>
-            <td>offered</td>
-            <td>offered</td>
-        </tr>
-        <tr>
-            <td>open</td>
-            <td>खोलना</td>
-            <td>opened</td>
-            <td>opened</td>
-        </tr>
-        <tr>
-            <td>order</td>
-            <td>आदेश देना</td>
-            <td>ordered</td>
-            <td>ordered</td>
-        </tr>
-        <tr>
-            <td>organize</td>
-            <td>आयोजित करना</td>
-            <td>organized</td>
-            <td>organized</td>
-        </tr>
-        <tr>
-            <td>pay</td>
-            <td>भुगतान करना</td>
-            <td>paid</td>
-            <td>paid</td>
-        </tr>
-        <tr>
-            <td>perform</td>
-            <td>प्रदर्शन करना</td>
-            <td>performed</td>
-            <td>performed</td>
-        </tr>
-        <tr>
-            <td>play</td>
-            <td>खेलना</td>
-            <td>played</td>
-            <td>played</td>
-        </tr>
-        <tr>
-            <td>practice</td>
-            <td>अभ्यास करना</td>
-            <td>practiced</td>
-            <td>practiced</td>
-        </tr>
-        <tr>
-            <td>prefer</td>
-            <td>तरजीह देना</td>
-            <td>preferred</td>
-            <td>preferred</td>
-        </tr>
-        <tr>
-            <td>prepare</td>
-            <td>तैयार करना</td>
-            <td>prepared</td>
-            <td>prepared</td>
-        </tr>
-        <tr>
-            <td>present</td>
-            <td>प्रस्तुत करना</td>
-            <td>presented</td>
-            <td>presented</td>
-        </tr>
-        <tr>
-            <td>prevent</td>
-            <td>रोकना</td>
-            <td>prevented</td>
-            <td>prevented</td>
-        </tr>
-        <tr>
-            <td>produce</td>
-            <td>उत्पादित करना</td>
-            <td>produced</td>
-            <td>produced</td>
-        </tr>
-        <tr>
-            <td>promise</td>
-            <td>वादा करना</td>
-            <td>promised</td>
-            <td>promised</td>
-        </tr>
-        <tr>
-            <td>protect</td>
-            <td>सुरक्षित रखना</td>
-            <td>protected</td>
-            <td>protected</td>
-        </tr>
-        <tr>
-            <td>prove</td>
-            <td>साबित करना</td>
-            <td>proved</td>
-            <td>proved</td>
-        </tr>
-        <tr>
-            <td>provide</td>
-            <td>प्रदान करना</td>
-            <td>provided</td>
-            <td>provided</td>
-        </tr>
-        <tr>
-            <td>put</td>
-            <td>रखना</td>
-            <td>put</td>
-            <td>put</td>
-        </tr>
-        <tr>
-            <td>reach</td>
-            <td>पहुँचना</td>
-            <td>reached</td>
-            <td>reached</td>
-        </tr>
-        <tr>
-            <td>read</td>
-            <td>पढ़ना</td>
-            <td>read</td>
-            <td>read</td>
-        </tr>
-        <tr>
-            <td>receive</td>
-            <td>प्राप्त करना</td>
-            <td>received</td>
-            <td>received</td>
-        </tr>
-        <tr>
-            <td>recognize</td>
-            <td>पहचानना</td>
-            <td>recognized</td>
-            <td>recognized</td>
-        </tr>
-        <tr>
-            <td>reduce</td>
-            <td>कम करना</td>
-            <td>reduced</td>
-            <td>reduced</td>
-        </tr>
-        <tr>
-            <td>remember</td>
-            <td>याद रखना</td>
-            <td>remembered</td>
-            <td>remembered</td>
-        </tr>
-        <tr>
-            <td>repeat</td>
-            <td>दोहराना</td>
-            <td>repeated</td>
-            <td>repeated</td>
-        </tr>
-        <tr>
-            <td>replace</td>
-            <td>बदलना</td>
-            <td>replaced</td>
-            <td>replaced</td>
-        </tr>
-        <tr>
-            <td>reply</td>
-            <td>जवाब देना</td>
-            <td>replied</td>
-            <td>replied</td>
-        </tr>
-        <tr>
-            <td>report</td>
-            <td>रिपोर्ट करना</td>
-            <td>reported</td>
-            <td>reported</td>
-        </tr>
-        <tr>
-            <td>request</td>
-            <td>अनुरोध करना</td>
-            <td>requested</td>
-            <td>requested</td>
-        </tr>
-        <tr>
-            <td>respect</td>
-            <td>सम्मान करना</td>
-            <td>respected</td>
-            <td>respected</td>
-        </tr>
-        <tr>
-            <td>rest</td>
-            <td>आराम करना</td>
-            <td>rested</td>
-            <td>rested</td>
-        </tr>
-        <tr>
-            <td>return</td>
-            <td>वापस आना</td>
-            <td>returned</td>
-            <td>returned</td>
-        </tr>
-        <tr>
-            <td>rise</td>
-            <td>उठना</td>
-            <td>rose</td>
-            <td>risen</td>
-        </tr>
-        <tr>
-            <td>run</td>
-            <td>दौड़ना</td>
-            <td>ran</td>
-            <td>run</td>
-        </tr>
-        <tr>
-            <td>save</td>
-            <td>बचाना</td>
-            <td>saved</td>
-            <td>saved</td>
-        </tr>
-        <tr>
-            <td>say</td>
-            <td>कहना</td>
-            <td>said</td>
-            <td>said</td>
-        </tr>
-        <tr>
-            <td>see</td>
-            <td>देखना</td>
-            <td>saw</td>
-            <td>seen</td>
-        </tr>
-        <tr>
-            <td>sell</td>
-            <td>बेचना</td>
-            <td>sold</td>
-            <td>sold</td>
-        </tr>
-        <tr>
-            <td>send</td>
-            <td>भेजना</td>
-            <td>sent</td>
-            <td>sent</td>
-        </tr>
-        <tr>
-            <td>set</td>
-            <td>सेट करना</td>
-            <td>set</td>
-            <td>set</td>
-        </tr>
-        <tr>
-            <td>show</td>
-            <td>दिखाना</td>
-            <td>showed</td>
-            <td>shown</td>
-        </tr>
-        <tr>
-            <td>shut</td>
-            <td>बंद करना</td>
-            <td>shut</td>
-            <td>shut</td>
-        </tr>
-        <tr>
-            <td>sing</td>
-            <td>गाना</td>
-            <td>sang</td>
-            <td>sung</td>
-        </tr>
-        <tr>
-            <td>sit</td>
-            <td>बैठना</td>
-            <td>sat</td>
-            <td>sat</td>
-        </tr>
-        <tr>
-            <td>sleep</td>
-            <td>सोना</td>
-            <td>slept</td>
-            <td>slept</td>
-        </tr>
-        <tr>
-            <td>speak</td>
-            <td>बोलना</td>
-            <td>spoke</td>
-            <td>spoken</td>
-        </tr>
-        <tr>
-            <td>spend</td>
-            <td>खर्च करना</td>
-            <td>spent</td>
-            <td>spent</td>
-        </tr>
-        <tr>
-            <td>stand</td>
-            <td>खड़ा होना</td>
-            <td>stood</td>
-            <td>stood</td>
-        </tr>
-        <tr>
-            <td>start</td>
-            <td>शुरू करना</td>
-            <td>started</td>
-            <td>started</td>
-        </tr>
-        <tr>
-            <td>stay</td>
-            <td>रहना</td>
-            <td>stayed</td>
-            <td>stayed</td>
-        </tr>
-        <tr>
-            <td>stop</td>
-            <td>रुकना</td>
-            <td>stopped</td>
-            <td>stopped</td>
-        </tr>
-        <tr>
-            <td>study</td>
-            <td>पढ़ाई करना</td>
-            <td>studied</td>
-            <td>studied</td>
-        </tr>
-        <tr>
-            <td>suggest</td>
-            <td>सुझाव देना</td>
-            <td>suggested</td>
-            <td>suggested</td>
-        </tr>
-        <tr>
-            <td>take</td>
-            <td>लेना</td>
-            <td>took</td>
-            <td>taken</td>
-        </tr>
-        <tr>
-            <td>talk</td>
-            <td>बात करना</td>
-            <td>talked</td>
-            <td>talked</td>
-        </tr>
-        <tr>
-            <td>teach</td>
-            <td>सिखाना</td>
-            <td>taught</td>
-            <td>taught</td>
-        </tr>
-        <tr>
-            <td>tell</td>
-            <td>बताना</td>
-            <td>told</td>
-            <td>told</td>
-        </tr>
-        <tr>
-            <td>think</td>
-            <td>सोचना</td>
-            <td>thought</td>
-            <td>thought</td>
-        </tr>
-        <tr>
-            <td>try</td>
-            <td>कोशिश करना</td>
-            <td>tried</td>
-            <td>tried</td>
-        </tr>
-        <tr>
-            <td>turn</td>
-            <td>मोड़ना</td>
-            <td>turned</td>
-            <td>turned</td>
-        </tr>
-        <tr>
-            <td>understand</td>
-            <td>समझना</td>
-            <td>understood</td>
-            <td>understood</td>
-        </tr>
-        <tr>
-            <td>use</td>
-            <td>इस्तेमाल करना</td>
-            <td>used</td>
-            <td>used</td>
-        </tr>
-        <tr>
-            <td>visit</td>
-            <td>दौरा करना</td>
-            <td>visited</td>
-            <td>visited</td>
-        </tr>
-        <tr>
-            <td>wait</td>
-            <td>इंतजार करना</td>
-            <td>waited</td>
-            <td>waited</td>
-        </tr>
-        <tr>
-            <td>walk</td>
-            <td>चलना</td>
-            <td>walked</td>
-            <td>walked</td>
-        </tr>
-        <tr>
-            <td>tweak</td>
-            <td>थोड़ा सुधार</td>
-            <td>tweaked</td>
-            <td>tweaked</td>
-        </tr>
-        <tr>
-            <td>Expresses</td>
-            <td>व्यक्त करना</td>
-            <td>Expressesed</td>
-            <td>Expressesed</td>
-        </tr>
-        <tr>
-            <td>neat</td>
-            <td>स्वच्छ</td>
-            <td>null</td>
-            <td>null</td>
-        </tr>
-        <tr>
-            <td>polite</td>
-            <td>शिष्टाचर-युक्त,विनम्र</td>
-            <td>null</td>
-            <td>null</td>
-        </tr>
-    </table>
+    <div class="faq">
+        <h3>❓ FAQ</h3>
+        <p><strong>When will I get paid?</strong> – Within 2 working days</p>
+        <p><strong>What if I don’t have UPI?</strong> – We also pay via PayPal/Gpay/Ppay & Paytm</p>
+        <p><strong>Is this offer genuine?</strong> – Yes! We work with real creators like you. <br> <br> <span
+                id="jenny"> sign in before 15 July 2025</span></span>
 
-    <script>
-        function searchWords() {
-            const input = document.getElementById("search").value.toLowerCase();
-            const table = document.getElementById("vocabTable");
-            const rows = table.getElementsByTagName("tr");
-            let visibleCount = 0;
+        </p>
+        <div class="badges">
+            <span>✅ YouTube Certified Partner</span>
+            <span>✅ UC Partnered</span>
+            <span>✅ SSL Secured Site</span>
+            <span>✅ Verified Ads Program</span>
+        </div>
+        <div class="contact">
+            📧 Email: mailto:cs.in@unipin.com<br>
 
-            for (let i = 1; i < rows.length; i++) {
-                const cells = rows[i].getElementsByTagName("td");
-                let match = false;
-
-                for (let j = 0; j < cells.length; j++) {
-                    if (cells[j].innerText.toLowerCase().includes(input)) {
-                        match = true;
-                        break;
-                    }
-                }
-
-                rows[i].style.display = match ? "" : "none";
-                if (match) visibleCount++;
-            }
-
-            document.getElementById("count").innerText = "Total Words: " + visibleCount;
-        }
-
-        // Initialize word count on page load
-        window.onload = () => {
-            const rows = document.getElementById("vocabTable").getElementsByTagName("tr");
-            document.getElementById("count").innerText = "Total Words: " + (rows.length - 1);
-        }
-    </script>
-
+        </div>
+    </div>
 </body>
 
 </html>
